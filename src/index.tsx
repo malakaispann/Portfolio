@@ -5,17 +5,22 @@ import ReactDOM from 'react-dom/client' ;
 // Global CSS
 import './styles/global_styles.css'
 
+// Contexts
+import { ThemeContextProvider } from './common/contexts/ThemeContext';
+
 // Pages
-import LandingPage from './pages/landing_page' ;
+import MainContent from './pages/MainContent';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 ) ;
 root.render(
     <React.StrictMode>
-        <div className='site-container'>
-            <LandingPage />
-        </div>
+        <ThemeContextProvider> 
+            <div className='site-container'>
+            <MainContent />
+            </div>
+        </ThemeContextProvider>
     </React.StrictMode>
 ) ;
 

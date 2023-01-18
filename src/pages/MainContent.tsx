@@ -1,7 +1,8 @@
 import React from 'react' ;
 import '../styles/global_styles.css'
 
-function Landing_Page() {
+
+function MainContent() {
     return (
         <div className='page-container'>
             
@@ -9,4 +10,4 @@ function Landing_Page() {
     )
 }
 
-export default Landing_Page
+export default MainContent

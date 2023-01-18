@@ -1,5 +1,15 @@
+/* Light Theme Styling */
+.light.testing {
+    color: red;
+}
 
-/// Icon styles
+/* Dark Theme Styling */
+.dark.testing {
+    color: blue; 
+}
+
+
+/* Icon styles */
 .icon {
     height: 1.5rem;
     width: 1.5rem;

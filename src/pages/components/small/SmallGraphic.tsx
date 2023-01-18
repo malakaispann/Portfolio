@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/component_styles.css'
+import '../../../styles/component_styles.css'
 
 /*
     @details : Creates a small graphic when given the location and description of the image.
@@ -17,7 +17,7 @@ function SmallGraphic({ graphic_src, desc }: Props) {
     // @testing
     return (
         <div>
-            <img className='icon' src={require("./../../assets" + graphic_src)} alt={desc} />
+            <img className='icon' src={require("./../../../assets" + graphic_src)} alt={desc} />
         </div>
     )
 }
