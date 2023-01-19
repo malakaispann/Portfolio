@@ -3,14 +3,117 @@
     color: red;
 }
 
-/* Dark Theme Styling */
+.light.background {
+    background: linear-gradient(#C5ADC5, 45% , #A5ADC5 );
+}
+.light.accent-main{
+    color: #E8E9ED;
+    /* 
+    CDC1FF
+    C1D7AE
+    B1F8F2
+    119DA4
+    */
+}
+.light.text{
+    color: black;
+}
+
+/* 
+Dark Theme Styling 
+*/
 .dark.testing {
     color: blue; 
 }
 
+.dark.background {
+    background-image: linear-gradient(to bottom, #0C1A1A, 95%, #0C1A3A );
 
-/* Icon styles */
-.icon {
-    height: 1.5rem;
-    width: 1.5rem;
 }
+
+.dark.accent-main {
+    color: #607196;
+    /* 
+    4E8098
+    A594F9
+    13505B
+    */
+}
+.dark.text{
+    color:white;
+}
+
+
+/* Icon styling */
+.icon.large{
+    height:3.5rem;
+    width:3.5rem;
+}
+
+.icon.medium {
+    height: 2rem;
+    width: 2rem;
+}
+
+.icon.small {
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+
+/* Text Styling */
+.textbox.outer {
+
+    min-height: 6rem;
+    height: auto;
+    width: 100%;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+}
+
+.textbox.inner {
+    padding: 1rem;
+}
+
+.text.title {
+    min-height: 3rem;
+    width: 100%;
+    padding: 1rem;
+
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
+
+.text.paragraph {
+    min-height: 2rem;
+    width: 100%;
+    padding: .5rem;
+
+    text-indent: 2rem;
+    letter-spacing: 1.2px;
+}
+
+.text.list {
+    min-height: 2rem;
+    height:auto;
+    padding: 0 .2rem;
+    letter-spacing: 1.2px;
+}
+
+.text.list.date {
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+    float: left;
+} 
+
+.text.list.desc {
+    text-align: left;
+    padding-left: 1rem;
+}
+
