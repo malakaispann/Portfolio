@@ -4,7 +4,7 @@
 }
 
 .light.background {
-    background: linear-gradient(#C5ADC5, 45% , #A5ADC5 );
+    background: linear-gradient(135deg, #C5ADC5 0%, #A5ADC5 50%, #C5ADC5 100%);
 }
 .light.accent-main{
     color: #E8E9ED;
@@ -27,7 +27,7 @@ Dark Theme Styling
 }
 
 .dark.background {
-    background-image: linear-gradient(to bottom, #0C1A1A, 95%, #0C1A3A );
+    background-image: linear-gradient(135deg, #102626 0%, #013D44 50%, #102626 100%);
 
 }
 
