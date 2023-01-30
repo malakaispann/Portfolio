@@ -1,0 +1,1 @@
+Each test is designed to test a singular element (ex. TextBox) or set of functionality (ex. animations) and verify its intended behavior throughout expected scenarios like resizing or theme switching. Tests may not have the same appearance as their final counterparts as the underlying functionality remains the same.

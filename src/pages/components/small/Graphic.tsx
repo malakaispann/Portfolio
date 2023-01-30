@@ -2,10 +2,16 @@ import React from 'react'
 import '../../../styles/component_styles.css'
 
 /**
- *   @details : Creates a small graphic when given the location and description of the image.
+ *   @details : Creates a graphic when given the relative size, location, and description of the graphic.
  *              Supports all formats.
- *   @param[in] icon_src : the relative svg file from '/src/assets' of the icon in string format.
- *   @param[in] desc : Description of icon for increased accessability.
+ * 
+ *   @Required
+ *   @param[in] graphic_src : the relative svg file from '/src/assets' of the graphic in string format.
+ *   @param[in] desc : description of graphic for increased accessability.
+ *   @param[in] size : relative size of graphic. Supported options are "small", "medium", and "large".
+ * 
+ *   @Optional
+ *   @param[in] extra_styles: extra styles to be applied to graphic. These should be passed as a single string or string literal.
  */
 
 
@@ -13,12 +19,12 @@ type Props = {
     graphic_src: string,
     desc: string,
     size: string,
+    extra_styles?: string
 }
 
-function Graphic({ size, graphic_src, desc }: Props) {
-    // @testing
+function Graphic({ size, graphic_src, desc, extra_styles }: Props) {
     return (
-        <img className={'icon ' + size} src={require("./../../../assets" + graphic_src)} alt={desc} />
+        <img className={`graphic ${size} ${extra_styles !== undefined ? extra_styles : ""}`} src={require("./../../../assets" + graphic_src)} alt={desc} />
     )
 }
 
