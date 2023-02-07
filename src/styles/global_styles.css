@@ -1,18 +1,18 @@
 :root {
-    --footer-height: 10rem;
+    --header-height: 4rem;
+    --footer-height: 5rem;
     --content-max-width: 1024px;
 }
 
 
-/* Remove unnecessary scroll bars */
+/* Basic site cleanup/configuration */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     min-width:1rem;
-    overflow-y: auto;
-    overflow-x: hidden;
     overflow-wrap: break-word;
+    font-family: "Open Sans", sans-serif;
 }
 
 /* Take up the entire viewport; pages can later use 100% references. */
@@ -28,7 +28,7 @@
     width: 100%;
     min-height: 100%;
     height: auto;
-    padding: 2em 1em 0;
+    padding: 0 3em 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -39,5 +39,6 @@
     max-width: var(--content-max-width);
 
     /* see component_styles.css */
-    padding-bottom: calc(var(--footer-height) + 1rem);;
+    padding-bottom: calc(var(--footer-height) + 1rem);
+    padding-top: calc(var(--header-height) + 1rem) ;
 }

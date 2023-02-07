@@ -1,0 +1,82 @@
+/* Alternative Media Styling */
+.socials-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials .enclosed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    float: left;
+    margin: 0 .4rem;
+    background-color: var(--light-main-accent);
+}
+
+.copyright {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text Styling */
+.text{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.text.title {
+    min-height: 3rem;
+    width: 100%;
+    padding: 1rem;
+
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
+
+.text.subtitle {
+    min-height: 2rem;
+    width: 100%;
+
+    text-align: justify;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.text.paragraph {
+    display: flex;
+    min-height: 2rem;
+    width: 100%;
+    padding: .5rem 0;
+
+    text-indent: 2rem;
+    letter-spacing: 1.2px;
+}
+
+.text.list {
+    min-height: 2rem;
+    height: auto;
+    letter-spacing: 1.2px;
+}
+
+.text.list.date {
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+    float: left;
+    width: 20%;
+    max-width: 10rem;
+} 
+
+.text.list.desc {
+    padding-left: 1rem;
+}

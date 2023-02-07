@@ -84,6 +84,7 @@
   },
   "devDependencies": {
     "@heroicons/react": "^2.0.13",
-    "eslint": "^8.31.0"
+    "eslint": "^8.31.0",
+    "react-router-dom": "^6.8.0"
   }
 }
