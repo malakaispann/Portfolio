@@ -13,6 +13,7 @@ import { ThemeContextProvider } from './common/contexts/ThemeContext' ;
 import Main from './pages/Main' ;
 import SiteLayout from './common/SiteLayout' ;
 import Contact from './pages/Contact' ;
+import Projects from './pages/Projects' ;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,7 +26,8 @@ root.render(
                     <Routes>
                         <Route path='/' element={<SiteLayout/>}>
                             <Route index element={<Main />} />
-                            <Route path='contact' element={<Contact/>} />
+                            <Route path='contact' element={<Contact />} />
+                            <Route path='projects' element={<Projects/>} />
                         </Route>
                     </Routes>
                 </div>

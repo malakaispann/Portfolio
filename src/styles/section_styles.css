@@ -1,33 +1,77 @@
-/* Alternative Media Styling */
-.socials-container{
-    width: 100%;
+/* 
+    Footer Styling
+*/
+
+.copyright {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    font-size: .8rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.socials .enclosed{
+/* 
+    Misc Styling
+*/
+
+.enclosed{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
     height: 2rem;
     border-radius: 50px;
-    float: left;
-    margin: 0 .4rem;
     background-color: var(--light-main-accent);
 }
-
-.copyright {
-    display: flex;
-    width: 100%;
+.general-flex{
+   display:flex;
+   align-items: center;
+   justify-content: center;
+}
+.namecard {
+    display : flex;
     align-items: center;
-    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    height: 100%;
 }
 
-/* Text Styling */
+/* 
+    Navigation Stlying
+*/
+.nav.hyperlink{
+    min-height: var(--header-height);
+}
+.nav.hyperlink:hover{
+    background-color: rgb(0,0,0, .20);
+}
+.nav.hyperlink.active{
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+@media(max-width: 45rem) {
+    .nav.hyperlink{
+        float: none;
+        min-width: 10rem;
+        border-radius: 1rem;
+    }
+}
+
+/* 
+    Text Styling
+*/
+
 .text{
     overflow-y: auto;
     overflow-x: hidden;
+    font-size: .85rem;
+}
+.text.indent{
+    text-indent: 2rem;
+}
+.text.italic{
+    font-style: italic;
 }
 .text.title {
     min-height: 3rem;
@@ -35,8 +79,8 @@
     padding: 1rem;
 
     text-align: justify;
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration-line: underline;
@@ -44,22 +88,23 @@
 }
 
 .text.subtitle {
-    min-height: 2rem;
+    min-height: 1rem;
     width: 100%;
 
     text-align: justify;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
+    font-size: .9;
+    font-weight: 600;
 }
 
 .text.paragraph {
     display: flex;
-    min-height: 2rem;
+    min-height: 1rem;
     width: 100%;
     padding: .5rem 0;
 
-    text-indent: 2rem;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
 }
 
 .text.list {
@@ -71,7 +116,7 @@
 .text.list.date {
     text-align: left;
     font-style: italic;
-    font-weight: bold;
+    font-weight: 600;
     float: left;
     width: 20%;
     max-width: 10rem;
@@ -80,3 +125,25 @@
 .text.list.desc {
     padding-left: 1rem;
 }
+
+/* 
+    Theme Color Styling 
+*/
+
+/* Dark */
+.dark.enclosed{
+    background-color: var(--dark-main-accent);
+}
+.dark.namecard{
+    color: white;
+}
+
+/* Light */
+.light.enclosed{
+    background-color: var(--light-main-accent);
+}
+.light.namecard{
+    color: black;
+}
+
+

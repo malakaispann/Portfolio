@@ -1,1 +1,0 @@
-Hand Wave - <a href="https://www.flaticon.com/free-icons/bye" title="bye icons">Bye icons created by photo3idea_studio - Flaticon</a>

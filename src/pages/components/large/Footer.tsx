@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='footer outer'>
             <div className='footer inner' >
                 <div className='copyright'>
-                    Copyright &copy; {(new Date()).getFullYear()} Malakai Stanisclaus. All rights reserved.
+                    Copyright &copy; {(new Date()).getFullYear()} Malakai Spann. All rights reserved.
                 </div>
             </div>
         </div>

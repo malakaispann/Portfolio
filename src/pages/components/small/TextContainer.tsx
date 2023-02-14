@@ -8,25 +8,27 @@ import './../../../styles/section_styles.css'
  * 
  *   @Required
  *   @param[in] title_included: true if there is a title for the text.
+ *   @param[in] id:             unique identifier for the section.
  * 
  *   @Optional
- *   @param[in] title: the subheading to display at the top of the container.
+ *   @param[in] title:    the subheading to display at the top of the container.
  *   @param[in] children: other html/react elements to be displayed within container.
  */
 
 type Props = {
     title_included: boolean,
     title?: string,
+    id: string,
     children?: React.ReactNode;
 }
 
-const TextContainer = ({ title_included, title, children }: Props) => {
+const TextContainer = ({ title_included, title, id, children }: Props) => {
     const { getTheme } = useThemeContext() ;
     let theme = getTheme() ;
     return (
-        <div className='textbox-container'>
+        <div className={`textbox-container text ${theme}`} id={id}>
             { title_included === true ?
-                <div className={`text title ${theme}` }>
+                <div className={`text title` }>
                     {title}
                 </div>
                 : null }
