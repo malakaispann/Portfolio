@@ -16,7 +16,7 @@
     */ 
     --dark-main: #102626;
     --dark-gradient: #013D44;
-    --dark-main-accent: #4E8098;
+    --dark-main-accent: #307373;
     /* 
     73672A - 3 Doesn't fit the theme.
     4E8098 - 1 A real nice deep grey.
@@ -28,39 +28,6 @@
     */
 }
 
-/* 
-    Animations
-*/
-
-.hand-wave{
-    animation: handWave .6s infinite linear alternate  ;
-}
-@keyframes handWave {
-    from {
-        rotate: 10deg;
-        transform-origin: bottom right;
-    }
-    to{
-        rotate: -10deg;
-        transform-origin: bottom right;
-    } 
-}
-@keyframes slideRight{
-    from {
-        right: 100%;
-    }
-    to {
-        right: 0;
-    }
-}
-@keyframes slideLeft{
-    from {
-        left: 100%;
-    }
-    to {
-        left: 0;
-    }
-}
 
 /* 
     Footer Styling
@@ -75,7 +42,7 @@
     bottom: 0;
 }
 
-.footer.inner{
+.footer .inner{
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -129,7 +96,7 @@
     backdrop-filter: blur(10px);
 }
 
-.header.inner{
+.header .inner{
     width: 100%;
     height: 100%;
     display: flex;
@@ -157,23 +124,23 @@
     Navigator Menu Styling
 */
 
-.nav.full{
+.nav .full{
     display: flex;
     width: 25rem;
     height: 100%;
     align-items: center;
     justify-content: flex-end;
 }
-.nav.mobile,
+.nav .mobile,
 .menu.toggle {
     display: none;
 }
 
 @media (max-width: 45rem){
-    .nav.full{
+    .nav .full{
         display: none;
     }
-    .nav.mobile{
+    .nav .mobile{
         position: absolute;
         top: var(--header-height);
         right: .5rem;
@@ -183,7 +150,6 @@
         width: 10rem;
         align-items: center;
         justify-content: space-between;
-        border: solid .1px;
         border-radius: 1rem;
     }
     .menu.toggle{
@@ -211,66 +177,66 @@
 */
 
 /* Dark */
-.dark.testing {
+.dark .testing {
     color: white; 
 }
 .dark.background {
     background-image: linear-gradient(135deg, var(--dark-main) 0%, var(--dark-gradient) 50%, var(--dark-main) 100%);
 }
-.dark.graphic{
+.dark .graphic{
     filter: invert(100%);
 }
-.dark.header.outer{
+.dark .header .outer{
     background-color: rgb( 0,0,0, .2);
 }
-.dark.hyperlink{
+.dark .hyperlink{
     color: white;
 }
-.dark.nav.mobile{
+.dark .nav .mobile{
     background-color: var(--dark-main-accent);
 }
-.dark.text{
+.dark .text{
     color:white;
 }
-.dark.theme_switch.outer{
+.dark .theme_switch.outer{
     background-color: var(--dark-main-accent);
 }
-.dark.theme_switch.selector{
+.dark .theme_switch .selector{
     right: 0;
 }
-.dark.theme_switch.selector.slide{
+.dark .theme_switch .selector .slide{
     animation: slideRight 80ms linear 1;
 }
 
 /* Light */
-.light.testing {
-    color: red;
-}
 .light.background {
     background: linear-gradient(135deg, var(--light-main) 0%, var(--light-gradient) 50%, var(--light-main) 100%);
 }
-.light.graphic{
+.light.testing {
+    color: red;
+}
+.light .graphic{
     filter: invert(0%);
 }
-.light.header.outer{
+.light .header .outer{
     background-color: rgba(255, 255, 255, .25);
 }
-.light.hyperlink{
+.light .hyperlink{
     color: black;
 }
-.light.nav.mobile{
+.light .nav .mobile{
     background-color: var(--light-main-accent);
 }
-.light.text{
+.light .text{
     color: black;
 }
-.light.theme_switch.outer{
+.light .theme_switch .outer{
     background-color: var(--light-main-accent);
 }
-.light.theme_switch.selector{
+.light .theme_switch .selector{
     left : 0;
 }
-.light.theme_switch.selector.slide{
+.light .theme_switch .selector .slide{
     animation: slideLeft 80ms linear 1;
 }
 
@@ -287,7 +253,7 @@
     z-index: 1;
 }
 
-.theme_switch.inner{
+.theme_switch .inner{
     display: flex;
     width: 100%;
     height: 100%;
@@ -296,7 +262,7 @@
     justify-content: space-between;
 }
 
-.theme_switch.selector{
+.theme_switch .selector{
     position: absolute;
     width: 50%;
     height: 100%;
@@ -311,7 +277,7 @@
     filter: grayscale(100%);
 }
 
-.text.center {
+.text .center {
     align-items: center;
     justify-content: center;
 }

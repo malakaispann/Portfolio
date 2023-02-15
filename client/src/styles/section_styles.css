@@ -35,23 +35,30 @@
     font-weight: 500;
     height: 100%;
 }
+.straight{
+    transform: rotate(0deg);
+}
+.sideways{
+    transform: rotate(45deg);
+}
 
 /* 
     Navigation Stlying
 */
-.nav.hyperlink{
+
+.nav .hyperlink{
     min-height: var(--header-height);
 }
-.nav.hyperlink:hover{
+.nav .hyperlink:hover{
     background-color: rgb(0,0,0, .20);
 }
-.nav.hyperlink.active{
+.nav .hyperlink.active{
     text-decoration: underline;
     text-underline-offset: 6px;
 }
 
 @media(max-width: 45rem) {
-    .nav.hyperlink{
+    .nav .hyperlink{
         float: none;
         min-width: 10rem;
         border-radius: 1rem;
@@ -63,20 +70,18 @@
 */
 
 .text{
-    overflow-y: auto;
-    overflow-x: hidden;
     font-size: .85rem;
 }
-.text.indent{
+.text .indent{
     text-indent: 2rem;
 }
-.text.italic{
+.text .italic{
     font-style: italic;
 }
-.text.title {
-    min-height: 3rem;
+.text .title {
+    min-height: 2rem;
     width: 100%;
-    padding: 1rem;
+    margin: .5rem 1rem 1rem;
 
     text-align: justify;
     font-size: 1.2rem;
@@ -87,7 +92,7 @@
     text-underline-offset: 4px;
 }
 
-.text.subtitle {
+.text .subtitle {
     min-height: 1rem;
     width: 100%;
 
@@ -98,7 +103,7 @@
     font-weight: 600;
 }
 
-.text.paragraph {
+.text .paragraph {
     display: flex;
     min-height: 1rem;
     width: 100%;
@@ -107,23 +112,28 @@
     letter-spacing: 1.1px;
 }
 
-.text.list {
+.text .list {
     min-height: 2rem;
     height: auto;
     letter-spacing: 1.2px;
+    margin: 0 0 1rem 0;
 }
 
-.text.list.date {
+.list .date {
     text-align: left;
     font-style: italic;
     font-weight: 600;
     float: left;
     width: 20%;
     max-width: 10rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 } 
 
-.text.list.desc {
+.list .desc {
     padding-left: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* 
@@ -131,18 +141,18 @@
 */
 
 /* Dark */
-.dark.enclosed{
+.dark .enclosed{
     background-color: var(--dark-main-accent);
 }
-.dark.namecard{
+.dark .namecard{
     color: white;
 }
 
 /* Light */
-.light.enclosed{
+.light .enclosed{
     background-color: var(--light-main-accent);
 }
-.light.namecard{
+.light .namecard{
     color: black;
 }
 

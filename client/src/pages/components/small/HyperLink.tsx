@@ -27,17 +27,14 @@ type Props = {
 
 const HyperLink = ({ type, to, children, extra_styles }: Props) => {
     
-    const { getTheme } = useThemeContext() ;
-
-    let theme = getTheme() ;
     return type === LinkType.Internal ?
         (
-            <Link to={`${to}`} className={`hyperlink ${theme} ${extra_styles === undefined ? "" : extra_styles}`}>
+            <Link to={`${to}`} className={`hyperlink ${extra_styles === undefined ? "" : extra_styles}`}>
                 {children}
             </Link>
         ) : 
         (
-            <a href={`${to}`} className={`hyperlink ${theme} ${extra_styles === undefined ? "" : extra_styles}`}  >
+            <a href={`${to}`} className={`hyperlink ${extra_styles === undefined ? "" : extra_styles}`}  >
                 {children}
             </a>
         )

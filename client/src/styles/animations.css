@@ -1,0 +1,36 @@
+/* 
+    Animations
+*/
+
+.rotateRight {
+    animation: rotateRight .1s ease-in-out forwards;
+}
+.rotateLeft {
+    animation: rotateLeft .1s ease-in-out forwards;
+}
+@keyframes rotateRight{
+    to{
+        transform: rotate(180deg);
+    }   
+}
+@keyframes rotateLeft{
+        to {
+            transform: rotate(135deg);
+        }  
+}
+@keyframes slideRight{
+    from {
+        right: 100%;
+    }
+    to {
+        right: 0;
+    }
+}
+@keyframes slideLeft{
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}

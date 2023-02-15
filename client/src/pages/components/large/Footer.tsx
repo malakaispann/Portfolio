@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <div className='footer outer'>
-            <div className='footer inner' >
+            <div className='inner' >
                 <div className='copyright'>
                     Copyright &copy; {(new Date()).getFullYear()} Malakai Spann. All rights reserved.
                 </div>

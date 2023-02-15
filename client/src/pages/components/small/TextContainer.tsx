@@ -23,12 +23,10 @@ type Props = {
 }
 
 const TextContainer = ({ title_included, title, id, children }: Props) => {
-    const { getTheme } = useThemeContext() ;
-    let theme = getTheme() ;
     return (
-        <div className={`textbox-container text ${theme}`} id={id}>
+        <div className='textbox-container text' id={id}>
             { title_included === true ?
-                <div className={`text title` }>
+                <div className='title'>
                     {title}
                 </div>
                 : null }
