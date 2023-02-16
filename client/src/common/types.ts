@@ -8,8 +8,3 @@ export const enum LinkType {
     Internal,
     External
 }
-
-export const enum MenuType {
-    Mobile,
-    Full
-}

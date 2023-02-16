@@ -1,7 +1,4 @@
 import React from 'react' ;
-import '../styles/global_styles.css' ;
-import '../styles/component_styles.css' ;
-import '../styles/section_styles.css' ;
 import TextContainer from './components/small/TextContainer' ;
 import TestTextContainer from '../common/test/TestTextContainer' ;
 

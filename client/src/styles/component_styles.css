@@ -124,27 +124,28 @@
     Navigator Menu Styling
 */
 
-.nav .full{
+.nav .content{
     display: flex;
     width: 25rem;
     height: 100%;
     align-items: center;
     justify-content: flex-end;
 }
-.nav .mobile,
+
 .menu.toggle {
     display: none;
 }
 
 @media (max-width: 45rem){
-    .nav .full{
+    .nav .content{
         display: none;
     }
-    .nav .mobile{
+
+    .nav .content.display{
+        display:flex;
         position: absolute;
         top: var(--header-height);
         right: .5rem;
-        display:flex;
         flex-direction: column;
         height: 12rem;
         width: 10rem;
@@ -152,10 +153,20 @@
         justify-content: space-between;
         border-radius: 1rem;
     }
+
     .menu.toggle{
         display: flex;
         margin: 0 0 0 .5rem;
     }
+
+    .dark .nav .content.display{
+        background-color: var(--dark-main-accent);
+    }
+
+    .light .nav .content.display{
+        background-color: var(--light-main-accent);
+    }
+    
 }
 
 /* 
@@ -192,9 +203,9 @@
 .dark .hyperlink{
     color: white;
 }
-.dark .nav .mobile{
-    background-color: var(--dark-main-accent);
-}
+/* .dark .nav .content.display{
+    see navigation styling section
+} */
 .dark .text{
     color:white;
 }
@@ -224,9 +235,9 @@
 .light .hyperlink{
     color: black;
 }
-.light .nav .mobile{
-    background-color: var(--light-main-accent);
-}
+/* .light .nav .content.display{
+    see navigation styling section
+} */
 .light .text{
     color: black;
 }

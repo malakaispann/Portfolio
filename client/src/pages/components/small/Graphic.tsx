@@ -1,6 +1,4 @@
 import React from 'react' ;
-import '../../../styles/component_styles.css' ;
-import '../../../styles/section_styles.css' ;
 import { Size } from '../../../common/types' ;
 
 /**
@@ -13,6 +11,7 @@ import { Size } from '../../../common/types' ;
  *   @param[in] size : relative size of graphic. Supported options are Size.Small, Size.Medium, Size.Large.
  * 
  *   @Optional
+ *   @param[in] disable_inversion: extra styles to be applied to graphic. These should be passed as a single string or string literal.
  *   @param[in] extra_styles: extra styles to be applied to graphic. These should be passed as a single string or string literal.
  */
 
@@ -21,12 +20,13 @@ type Props = {
     graphic_src: string,
     desc: string,
     size: Size,
+    disable_inversion?: boolean,
     extra_styles?: string
 }
 
-function Graphic({ size, graphic_src, desc, extra_styles }: Props) {
+function Graphic({ size, graphic_src, desc, disable_inversion, extra_styles }: Props) {
     return (
-        <img className={`graphic ${size} ${extra_styles === undefined ? "" : extra_styles}`} src={require("./../../../assets" + graphic_src)} alt={desc} />
+        <img className={`graphic ${size} ${disable_inversion === undefined? 'invert' : ''} ${extra_styles === undefined ? '' : extra_styles}`} src={require("./../../../assets" + graphic_src)} alt={desc} />
     )
 }
 

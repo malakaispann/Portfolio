@@ -1,37 +1,21 @@
-import React, { useState } from 'react'
-import '../../../styles/component_styles.css'
-import '../../../styles/section_styles.css'
-import { useThemeContext } from '../../../common/contexts/ThemeContext'
-import { LinkType, MenuType } from '../../../common/types'
-import HyperLink from './HyperLink'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import React from 'react'
+import { LinkType } from '../../../common/types'
 import { useLocation } from 'react-router-dom'
+import HyperLink from './HyperLink'
 
 type Props = {
-    type: MenuType
+    menuTrigger: boolean
 }
 
-const NavMenu = ({ type }: Props) => {
+const NavMenu = ({ menuTrigger }: Props) => {
     
-    const [menuTrigger, setMenuTrigger] = useState(false) ;
-    const [clicked, setClicked] = useState(false) ;
-    const { getTheme } = useThemeContext() ;
-
-    let theme = getTheme() ;
     let location = useLocation() ;
 
-    const handleClick = () => {
-        setClicked(prevState => {
-            return !prevState
-        })
-    }
-    const handleMenuToggle = () => {
-        setMenuTrigger(!menuTrigger) ;
-    }
+    return (
+        <div className='nav'>
 
-    const menuContent = () => {
-        return (
-            <div className={`${type === MenuType.Full ? 'full' : 'mobile'}`}>
+            <div className={`nav content ${menuTrigger ? 'display' : ''}`}>
+                
                 <HyperLink type={LinkType.Internal} to={"/"} extra_styles={`${location.pathname === "/" ? "active" : ""}`}>
                     Home
                 </HyperLink>
@@ -41,29 +25,9 @@ const NavMenu = ({ type }: Props) => {
                 <HyperLink type={LinkType.Internal} to={"/projects"} extra_styles={`${location.pathname === "/projects" ? "active" : ""}`}>
                     Projects
                 </HyperLink>
-            </div>
-        )
-    }
 
-    return (
-        <div className='nav'>
-            {
-                type === MenuType.Mobile &&
-                <div className='menu toggle' onClick={() => { handleClick() ; handleMenuToggle() ;  }}> 
-                    <div className='enclosed'> 
-                        {
-                            !menuTrigger ?
-                                <XMarkIcon className={`graphic small ${clicked? 'rotateRight' : 'sideways'}`} onAnimationEnd={handleClick} />
-                                :
-                                <XMarkIcon className={`graphic small ${clicked? 'rotateLeft' : 'straight'}`} onAnimationEnd={handleClick} />
-                                
-                        }
-                    </div>
-                </div>
-            }
-            {   ((type === MenuType.Full) || (type === MenuType.Mobile && menuTrigger)) &&
-                menuContent()
-            }
+            </div>
+
         </div>
     )
 }

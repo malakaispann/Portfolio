@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { useThemeContext } from '../../../common/contexts/ThemeContext' ;
-import './../../../styles/component_styles.css'
-import './../../../styles/section_styles.css'
 import { SunIcon } from '@heroicons/react/24/outline'
 import { MoonIcon } from '@heroicons/react/24/outline'
 

@@ -1,7 +1,4 @@
 import React from 'react'
-import { useThemeContext } from '../../../common/contexts/ThemeContext'
-import './../../../styles/component_styles.css'
-import './../../../styles/section_styles.css'
 
 /**
  *   @details : Creates a flexible container for text (and other content). 
