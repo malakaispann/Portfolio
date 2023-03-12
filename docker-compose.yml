@@ -1,0 +1,9 @@
+version: "test lone program"
+services:
+  client:
+    build: ./client/
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/home/NRuser/personal-site/
+    command: sleep infinite

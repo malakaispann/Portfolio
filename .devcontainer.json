@@ -1,0 +1,23 @@
+{
+    "name": "Personal Website",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "client",
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/home/NRuser/personal-site/",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"formulahendry.auto-rename-tag",
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker",
+				"dsznajder.es7-react-js-snippets",
+				"dbaeumer.vscode-eslint",
+				"ecmel.vscode-html-css",
+				"xabikos.JavaScriptSnippets",
+				"shd101wyy.markdown-preview-enhanced",
+				"burkeholland.simple-react-snippets"
+			]
+		}
+	},
+    "postCreateCommand": "dos2unix scripts/* && chmod +x scripts/init.sh && scripts/init.sh"
+}
