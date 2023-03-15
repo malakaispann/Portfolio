@@ -1,5 +1,5 @@
 #!/bin/sh
-task_list='grant_ownership prep_scripts '
+task_list='grant_ownership prep_scripts client_dev_install '
 tasks=$(echo "$task_list" | wc -w)
 completed=0
 
@@ -28,6 +28,13 @@ function prep_scripts (){
 
 function display_progress() {
     echo "Tasks completed => ${completed} / ${tasks}"
+}
+
+function client_dev_install() {
+    echo "Installing client dependencies"
+    
+    cd ./client && npm install
+    cd ~
 }
 
 # Run all tasks

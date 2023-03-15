@@ -21,7 +21,7 @@ WORKDIR ${workdir}
 
 # Update Package Management and Install Dependences
 COPY package*.json . 
-RUN  cd client && npm install
+RUN  npm install
 
 # Copy source files
 COPY . .
