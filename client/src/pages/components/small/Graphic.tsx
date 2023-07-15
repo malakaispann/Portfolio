@@ -26,7 +26,9 @@ type Props = {
 
 function Graphic({ size, graphic_src, desc, disable_inversion, extra_styles }: Props) {
     return (
-        <img className={`graphic ${size} ${disable_inversion === undefined? 'invert' : ''} ${extra_styles === undefined ? '' : extra_styles}`} src={require("./../../../assets" + graphic_src)} alt={desc} />
+        <div className={`graphic ${size} ${extra_styles === undefined ? '' : extra_styles}`}>
+            <img className={`${disable_inversion === undefined? 'invert' : ''}`} src={require('./../../../assets' + graphic_src)} alt={desc} />
+        </div>
     )
 }
 

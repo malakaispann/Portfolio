@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react" ;
+import React, { createContext, useContext, useState } from 'react' ;
 
 
 /**
@@ -28,7 +28,7 @@ export const ThemeContextProvider = ({ children }: Props) => {
     }
 
     const getTheme = () => {
-        return theme===Mode.Light ? "light" : "dark"
+        return theme===Mode.Light ? 'light' : 'dark'
     }
     
     return (

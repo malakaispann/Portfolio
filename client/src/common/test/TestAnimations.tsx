@@ -10,10 +10,10 @@ const TestAnimations = () => {
     let theme = getTheme() ;
     // Textbox use should not affect animation functionality.
     return (
-        <TextContainer title_included={false} id='Animation-Tests'>
+        <TextContainer id='Animation-Tests'>
             {/* Right - to - Left Animation  */}
-            <div className={`theme_switch outer ${theme}`} onClick={toggleTheme}>
-                <div className={`theme_switch selector ${theme}`} />
+            <div className={`theme-switch outer ${theme}`} onClick={toggleTheme}>
+                <div className={`theme-switch selector ${theme}`} />
             </div>
         </TextContainer>
     )

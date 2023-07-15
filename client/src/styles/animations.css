@@ -1,36 +1,119 @@
 /* 
     Animations
 */
-
 .rotateRight {
-    animation: rotateRight .1s ease-in-out forwards;
+    animation: rotateRight .175s linear forwards;
 }
 .rotateLeft {
-    animation: rotateLeft .1s ease-in-out forwards;
+    animation: rotateLeft .175s linear forwards;
 }
 @keyframes rotateRight{
     to{
-        transform: rotate(180deg);
+        transform: rotate(-135deg);
     }   
 }
 @keyframes rotateLeft{
         to {
-            transform: rotate(135deg);
+            transform: rotate(90deg);
         }  
 }
 @keyframes slideRight{
-    from {
-        right: 100%;
+    from{
+        transform: translateX(0);
     }
-    to {
-        right: 0;
+    to{
+        transform: translateX(150%);
     }
 }
 @keyframes slideLeft{
     from {
-        left: 100%;
+        transform:  translateX(150%);
     }
     to {
-        left: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from{
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-15%);
+    }
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(-15%);
+    }
+    10%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-4%);
+    }
+    33%{
+        transform: translateY(0);
+    }
+    42%{
+        transform: translateY(2.5%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    55%{
+        transform: translateY(1.5%);
+    }
+    59%{
+        transform: translateY(0);
+    }
+    62%{
+        transform: translateY(.7%);
+    }
+    65%{
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slide-up-and-appear {
+    from{
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: -1.5rem;
+        opacity: 1;
+    }
+}
+
+
+/* Header animations */
+@keyframes slide-up-and-disappear {
+    0%{
+        top: 0;
+    }
+    35%{
+        transform: translateY(calc((var(--header-height) -3rem )* -1)) ;
+    }
+    100%{
+        transform: translateY(calc(var(--header-height) * -1)) ;
+    }
+}
+@keyframes add-shadow {
+    to{
+        box-shadow: 0 .1rem 2rem 2px rgba(var(--dark-bg), .75);
+    }
+}
+@keyframes slide-down-and-appear {
+    0%{
+        transform: translateY(calc(var(--header-height) * -1)) ;
+    }
+    35%{
+        transform: translateY(calc((var(--header-height) -2rem) * -1)) ;;
+    }
+    100%{
+        transform: translateY(0) ;
     }
 }

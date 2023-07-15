@@ -5,7 +5,7 @@ import '../../styles/component_styles.css'
 const TestThemeSwitcher = () => {
     const { getTheme, toggleTheme } = useThemeContext() ;
     return (
-        <div className={"testing " + getTheme()} onClick={ toggleTheme}>
+        <div className={'testing ' + getTheme()} onClick={ toggleTheme}>
             TestThemeSwitch
         </div>
     )

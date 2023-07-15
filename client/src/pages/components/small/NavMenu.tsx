@@ -13,16 +13,15 @@ const NavMenu = ({ menuTrigger }: Props) => {
 
     return (
         <div className='nav'>
-
-            <div className={`nav content ${menuTrigger ? 'display' : ''}`}>
+            <div className={`content ${menuTrigger ? 'display' : ''}`}>
                 
-                <HyperLink type={LinkType.Internal} to={"/"} extra_styles={`${location.pathname === "/" ? "active" : ""}`}>
-                    Home
+                <HyperLink type={LinkType.Internal} to='/#Introduction' extra_styles={`${location.pathname === '/' ? 'active' : ''}`}>
+                    About Me
                 </HyperLink>
-                <HyperLink type={LinkType.Internal} to={"/contact"} extra_styles={`${location.pathname === "/contact" ? "active" : ""}`}>
-                    Contact
+                <HyperLink type={LinkType.Internal} to='/#Experience' extra_styles={`${location.pathname === '/' ? 'active' : ''}`}>
+                    Experience
                 </HyperLink>
-                <HyperLink type={LinkType.Internal} to={"/projects"} extra_styles={`${location.pathname === "/projects" ? "active" : ""}`}>
+                <HyperLink type={LinkType.Internal} to='/projects' extra_styles={`${location.pathname === '/projects' ? 'active' : ''}`}>
                     Projects
                 </HyperLink>
 

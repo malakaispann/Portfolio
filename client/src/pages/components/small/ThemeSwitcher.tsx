@@ -8,22 +8,22 @@ import { MoonIcon } from '@heroicons/react/24/outline'
  */
 
 const ThemeSwitcher = () => {
-    const { toggleTheme } = useThemeContext() ;
+    const { getTheme, toggleTheme } = useThemeContext() ;
     const [pushed, setPushed] = useState(false) ;
     
     let handleThemeChange = () => {
         setPushed(prevState => {
-            return !prevState
+            return true
         })
     }
     
     return (
-        <div className='theme_switch outer' onClick={() => { handleThemeChange() ; toggleTheme() ; }}>
+        <div className='theme-switch outer' onClick={() => { handleThemeChange() ; toggleTheme() ; }}>
             <div className='inner'>
-                <SunIcon className='graphic small'  />
-                <MoonIcon className='graphic small' />
+                <SunIcon className={`graphic small ${getTheme() === 'light' ? 'invert' : ''}`}  />
+                <MoonIcon className={`graphic small ${getTheme() === 'light' ? 'invert' : ''}`} />
             </div>
-            <div className={`selector ${pushed ? "slide" : ""}`} onAnimationEnd={handleThemeChange} />
+            <div className={`selector ${pushed ? 'slide' : ''}`} />
         </div>
     )
 }
