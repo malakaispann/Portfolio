@@ -17,6 +17,7 @@ const Header = () => {
             return !prevState
         })
     }
+
     const blurBackground = (blur:boolean) => {
         let bg = document.getElementById('PageContent') ;
 
@@ -99,7 +100,7 @@ const Header = () => {
                     <Graphic size={Size.Large} graphic_src={'/logos/personal_logo.png'} disable_inversion={true} desc='My Logo'/>
                 </div>
                 < div className='general-flex parent-height'>
-                    <NavMenu menuTrigger={menuTrigger}/>
+                    <NavMenu menuTrigger={menuTrigger} extra_function={() => { blurBackground(false) ; setMenuTrigger(false) ; }}/>
                     <div className='general-flex' id="Interactables">
                         <ThemeSwitcher />
                         <div className='menu toggle' onClick={() => { handleClick() ; handleMenuToggle() ;  }}> 

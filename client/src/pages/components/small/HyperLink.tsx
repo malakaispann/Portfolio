@@ -20,18 +20,19 @@ type Props = {
     to: string,
     children?: React.ReactNode,
     extra_styles?: string,
+    extra_function?: Function,
 }
 
-const HyperLink = ({ type, to, children, extra_styles }: Props) => {
+const HyperLink = ({ type, to, children, extra_styles, extra_function }: Props) => {
     
     return type === LinkType.Internal ?
         (
-            <Link to={`${to}`} className={`hyperlink ${extra_styles === undefined ? '' : extra_styles}`}>
+            <Link to={`${to}`} className={`hyperlink ${extra_styles === undefined ? '' : extra_styles}`} onClick={() => extra_function? extra_function() : undefined}>
                 {children}
             </Link>
         ) : 
         (
-            <a href={`${to}`} className={`hyperlink ${extra_styles === undefined ? '' : extra_styles}`}  >
+            <a href={`${to}`} className={`hyperlink ${extra_styles === undefined ? '' : extra_styles}`}>
                 {children}
             </a>
         )

@@ -1,6 +1,5 @@
 import { memo } from 'react' ;
 import TextContainer from './components/small/TextContainer' ;
-import TestTextContainer from '../common/test/TestTextContainer' ;
 import HyperLink from './components/small/HyperLink' ;
 import { LinkType } from '../common/types' ;
 
@@ -18,7 +17,7 @@ const Main = () =>  {
                         <div className='portrait' />
                     </div>
                     <div>
-                        <p id='Greeting'> Hello <span className='hand-wave'>👋🏽</span>, my name is</p>
+                        <p id='Greeting'> Hey <span className='hand-wave'>👋🏽</span>, my name is</p>
                         <p id='Name'>Malakai Spann </p>
                         <p className='subtitle' id='Occupation1'> Developer,</p>
                         <p className='subtitle' id='Occupation2'> Expert Google Search User,</p>
@@ -26,7 +25,7 @@ const Main = () =>  {
 
                         <p className='paragraph' id='Introduction'>
                             I'm a 4th year Computer Science major at <HyperLink type={LinkType.External} to='https://www.fit.edu/'> Florida Tech </HyperLink> focused
-                            on software development and data processing. In short, I make cool stuff.
+                            on software development and data processing. In short, I like to use and make cool stuff.
                         </p>
 
                         <div id='Interests'>
@@ -34,8 +33,8 @@ const Main = () =>  {
                                 <p>Current Interests:</p>
                             </div>
 
-                            <div className='paragraph indent italic'>
-                                <p> application development (mobile & web), data processing, data visualization, information assurance</p>
+                            <div className='paragraph '>
+                                <p className='indent italic'> application development (mobile & web), artificial intelligence, data visualization, information assurance</p>
                             </div>
                         </div>
                         <div className='list' id='Graduation-Date'>
@@ -47,7 +46,27 @@ const Main = () =>  {
 
             </div>
 
-            <TestTextContainer/>
+            <TextContainer id="About">
+                <div className='title'> About Me </div>
+                <div className='paragraph'>
+                    <p>
+                        My interest in computers started around 2007 when I was gifted my first game system.
+                        I enjoyed researching mechanics, testing new builds, competing with friends, and taking on 
+                        challenging objectives. The possibilities were only as limited as my dedication.
+                    </p>
+                </div>
+                <div className='paragraph'>
+                    <p>
+                        Since then, I've continued chasing my passion by learning software development. As a college student,
+                        I've completed rigorous coursework while taking on projects to apply the knowledge gained in a practical 
+                        environment. In addition, I've gained professional experience developing scalable, secure software and 
+                        communicating with clients, teams, and users working for a
+                        <HyperLink type={LinkType.External} to='https://www.lockheedmartin.com/en-us/who-we-are.html' > world-renowned Aerospace and Defense corporation.</HyperLink>
+                    </p>
+                </div>
+
+
+            </TextContainer>
 
             <TextContainer id='Experience' >
                 <p className='title'> Professional Experience</p>

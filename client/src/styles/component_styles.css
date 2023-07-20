@@ -7,8 +7,7 @@
 .light {
     --bg: var(--white);
 
-    --main: 55, 119, 113;
-    --base: 113, 55, 119;
+    --main: 69, 149, 141;
     --selector: var(--white);
     --selector-outer: 64, 70, 94;
 
@@ -25,7 +24,6 @@
     --bg: 7, 19, 48;
 
     --main: 110 , 238, 226;
-    --base: 226, 110, 238;
     --selector : var(--slate-grey);
     --selector-outer : 232, 233, 237; 
 
@@ -104,9 +102,6 @@ body.dark{
 
 .hyperlink {
     color: rgb(var(--hyperlink));
-}
-.text {
-    color: rgb(var(--text));
 }
 .theme-switch.outer {
     background-color: rgb(var(--selector-outer));
@@ -277,12 +272,12 @@ body.dark{
 
 .text .hyperlink,
 .footer .hyperlink {
-    height: 1rem;
+    height: auto;
     width: auto;
     min-width: min-content;
     font-size: inherit;
-    display: inline-block;
-    color: rgb(var(--base));
+    display: inline;
+    color: rgb(var(--main));
     padding: 0;
 }
 
@@ -311,7 +306,7 @@ body.dark{
 .nav .hyperlink:hover{
     border-radius: 0 0 10px 10px;
     opacity: 1;
-    background-color: rgba(var(--base), .5);
+    background-color: rgba(var(--main), .5);
 }
 
 .nav .hyperlink.active{
@@ -334,7 +329,7 @@ body.dark{
 
 @media only screen and (max-width: 640px) {
 
-    .nav {
+    .nav:has(.content.display) {
         position: absolute;
         height: 100vh;
         width: 100%;
@@ -421,7 +416,7 @@ body.dark{
     animation: display-handle .25s linear forwards ;
     color: white;
     font-size: clamp(14px, 1.1vw , .9rem);
-    background-color: rgb(var(--base));
+    background-color: rgba(var(--main), .6);
     padding: 0 .5rem;
     border-radius: 1rem;
 }
@@ -474,6 +469,6 @@ body.dark{
 
 #Interactables{
     z-index: 2;
-    min-width: 6rem;
+    width: 6rem;
     margin-right: 1rem;
 }

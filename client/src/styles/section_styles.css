@@ -23,10 +23,7 @@
 
 .text{
     font-size: clamp(14.5px, 1.3vw , 1rem);
-}
-
-.text .indent{
-    text-indent: 2rem;
+    color: rgb(var(--text));
 }
 
 .text .italic{
@@ -41,7 +38,6 @@
     font-size: clamp(20px, 2vw ,1.5rem);
     font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
     text-decoration-line: underline;
     text-underline-offset: 4px;
 }
@@ -49,9 +45,8 @@
 .text .subtitle {
     min-height: 1rem;
     width: 100%;
-    margin: 0 1rem;
     font-size: clamp(14px, 1.4vw ,1.1rem);
-    color : rgb(var(--main));
+    color : rgba(var(--text), .5);
 }
 
 .text .paragraph {
@@ -62,6 +57,10 @@
     margin: 0 0 .5rem 0;
     font-size: clamp(14px, 1.2vw ,1rem);
     letter-spacing: 1.1px;
+    text-indent: 1rem;
+}
+.text .paragraph * {
+    text-indent: 0;
 }
 
 .text .list {
@@ -70,6 +69,11 @@
     letter-spacing: 1.2px;
     margin: 0 0 .5rem 0;
 }
+
+.text .indent {
+    text-indent: 1rem;
+}
+
 .list .date {
     text-align: left;
     font-style: italic;
@@ -112,9 +116,6 @@
     }
     .text .indent {
         text-indent: 0;
-    }
-    .text .subtitle{
-        margin: 0;
     }
 }
 
@@ -195,10 +196,13 @@
 #Graduation-Date, #Interests{
     animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
 }
+#Interests .subtitle {
+    margin: 0;
+}
 
 @media only screen and (max-width: 640px){
     .page-spacer:has(#Opening) {
-        padding-top: 2rem;
+        padding-top: 1rem;
         justify-content: start;
     }
 
