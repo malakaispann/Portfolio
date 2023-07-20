@@ -1,4 +1,4 @@
-import React from 'react' ;
+import { memo } from "react" ;
 import { Size } from '../../../common/types' ;
 
 /**
@@ -32,4 +32,4 @@ function Graphic({ size, graphic_src, desc, disable_inversion, extra_styles }: P
     )
 }
 
-export default Graphic
+export default memo(Graphic)

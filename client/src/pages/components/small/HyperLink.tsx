@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { LinkType } from '../../../common/types'
 import { HashLink as Link } from 'react-router-hash-link' ;
 
@@ -37,4 +37,4 @@ const HyperLink = ({ type, to, children, extra_styles }: Props) => {
         )
 }
 
-export default HyperLink
+export default memo(HyperLink)

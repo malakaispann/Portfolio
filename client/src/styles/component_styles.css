@@ -1,18 +1,77 @@
 /* 
-    Global Variable Definitions
+    Theme Color Styling 
+
+    Included at the top so that color overwrites work as expected.
+
 */
-:root {
-    --dark-selector : 110, 126, 133;
-    --dark-selector-outer : 232, 233, 237; 
-    --light-selector: 47, 34, 53;
+.light {
+    --bg: var(--white);
 
-    --dark-bg: 7, 19, 48;
-
-    --base: 128, 164, 237;
     --main: 55, 119, 113;
+    --base: 113, 55, 119;
+    --selector: var(--white);
+    --selector-outer: 64, 70, 94;
+
+    --text: var(--black);
+    --hyperlink: var(--black);
+
+    --graphic-filter: grayscale(100%) invert(0%);
+
+    --footer: var(--black);
+    
 }
 
-/* Fill entire viewport with contained elements */
+.dark {
+    --bg: 7, 19, 48;
+
+    --main: 110 , 238, 226;
+    --base: 226, 110, 238;
+    --selector : var(--slate-grey);
+    --selector-outer : 232, 233, 237; 
+
+    --text: var(--white);
+    --hyperlink: var(--white);
+
+    --graphic-filter: grayscale(100%) invert(100%);
+    
+    --footer: var(--white);
+
+}
+
+body.dark{
+    background-color: rgb(7, 19, 48);
+}
+.dark.testing {
+    color: white;
+}
+.dark .theme-switch .selector {
+    left: -5%;
+    transform: translateX(150%);
+}
+.dark .theme-switch .selector.slide{
+    animation: slideRight .25s linear forwards;
+}
+
+.light.testing {
+    color: red;
+}
+
+.light .theme-switch .selector {
+    left: 5%;
+    transform: translateX(0);
+}
+.light .theme-switch .selector.slide{
+    animation: slideLeft .25s linear forwards;
+}
+.light .theme-switch .graphic.invert {
+    filter: invert(100%);
+}
+
+
+/* 
+    General Styling    
+*/
+
 .page-spacer {
     min-width: 100%;
     width: 100%;
@@ -22,86 +81,38 @@
     justify-content: center;
 }
 
-/* 
-    Theme Color Styling 
-
-    Included at the top so that color overwrites work as expected.
-*/
-
-/* Dark */
-.dark.background {
-    background-color: rgb(var(--dark-bg));    
-}
-.dark.testing {
-    color: white;
-}
-.dark .footer {
-    color: white;
-}
-.dark .graphic .invert,
-.dark .graphic.invert {
-    filter: grayscale(100%) invert(100%);
-}
-.dark .header{
-    background-color: rgba(var(--dark-bg), .85);
-}
-.dark .hyperlink{
-    color: white;
-}
-/* .light .nav .content.display{
-    see navigation styling section
-} */
-.dark .text{
-    color: white;
-}
-.dark .theme-switch.outer{
-    background-color: rgb(var(--dark-selector-outer));
-}
-.dark .theme-switch .selector {
-    background-color: rgb(var(--dark-selector));
-    left: -5%;
-}
-.dark .theme-switch .selector.slide{
-    animation: slideRight .25s linear forwards;
+.enclosed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    height: auto;
+    width: auto;
+    padding: 1rem;
+    position: relative;
 }
 
-/* Light */
-.light.background {
-    background: white;
-    /* background: linear-gradient(135deg, var(--light-main) 0%, var(--light-gradient) 50%, var(--light-main) 100%); */
-}
-.light.testing {
-    color: red;
-}
-.light .footer {
-    color: black;
-}
-.light .graphic .invert,
-.light .graphic.invert {
-    filter: grayscale(100%) invert(0%);
-}
-.light .header{
-    background-color: rgba(255, 255, 255, .85);
-}
-.light .hyperlink{
-    color: black;
+.general-flex{
+   display:flex;
+   align-items: center;
+   justify-content: center;
 }
 
-/* .light .nav .content.display{
-    see navigation styling section
-} */
-.light .text{
-    color: black;
+.background{
+    background-color: rgb(var(--bg));
 }
-.light .theme-switch.outer{
-    background-color: #40465E;
+
+.hyperlink {
+    color: rgb(var(--hyperlink));
 }
-.light .theme-switch .selector {
-    background-color: white;
-    left: 5%;
+.text {
+    color: rgb(var(--text));
 }
-.light .theme-switch .selector.slide{
-    animation: slideLeft .25s linear forwards;
+.theme-switch.outer {
+    background-color: rgb(var(--selector-outer));
+}
+.theme-switch .selector{
+    background-color: rgb(var(--selector));
 }
 
 /* 
@@ -111,11 +122,12 @@
 .footer.outer{
     position: absolute;
     height: var(--footer-height);
-    display: flex; 
-    justify-content: center;
     width: 100%;
     bottom: 0;
     left: 0;
+    display: flex; 
+    justify-content: center;
+    color: rgb(var(--text));
 }
 
 @media only screen and (max-width:640px) {
@@ -133,7 +145,12 @@
     width: 100%;
     max-width: var(--content-max-width);
     padding: .5rem 3rem 1rem;
-    border-top: .04rem solid currentColor;
+}
+
+.footer p {
+    width: 100%;
+    font-size: clamp(13px, 1.1vw, .9rem);
+    text-align: center;
 }
 
 /* 
@@ -141,26 +158,29 @@
 */
 
 .portrait {
-    height: 160px;
-    width: 160px;
-    margin: 0 0 1rem;
-    border-radius: 50%;
-    padding: .5rem;
-    border: solid rgba(var(--main), .5) 0.2rem;
+    height: clamp(120px, 30vw ,160px);
+    width: clamp(120px, 30vw ,160px);
+    background-image: url(../assets/other/relaxed_pfp.jpg);
+    background-size: contain;
+    user-select: none;
 }
 
+.graphic{
+    user-select: none;
+    max-width: 100%;
+    max-height: 100%;
+}
 .graphic.large{
-    height:200px;
-    width:200px;
-    max-width: 200px;
+    height: clamp(50px, 5vw ,60px);
+    width: clamp(50px, 5vw ,60px);
 }
 .graphic.medium {
-    height: 40px;
-    width: 40px;
+    height: clamp(25px, 4vw , 30px);
+    width: clamp(25px, 4vw , 30px);
 }
 .graphic.small {
-    height: 1.25rem;
-    width: 1.25rem;
+    height: clamp(15px, 3vw ,20px);
+    width: clamp(15px, 3vw ,20px);
 }
 .graphic img {
     max-width: 100%;
@@ -169,10 +189,14 @@
     height: auto;
 }
 
-.enclosed a {
-    animation: bounce 1.2s ease-out forwards;
+.graphic .invert,
+.graphic.invert {
+    filter: var(--graphic-filter);
 }
 
+.enclosed.bounce a {
+    animation: bounce 1.2s ease-out forwards;
+}
 
 .enclosed:hover > a {
     animation: slideUp .15s ease-in forwards;
@@ -185,6 +209,17 @@
 
 .dark .enclosed:hover > a .graphic.keep-invert img{
     filter: grayscale(100%) invert(100%);
+}
+/* This one's for you safari. I hate you.*/
+.sun{
+    background-image: url(../assets/other/sun.svg);
+}
+.moon{
+    background-image: url(../assets/other/moon.svg);
+}
+.x-mark{
+    background-image: url(../assets/other/x-mark.svg);
+    background-size: contain;
 }
 
 /* 
@@ -240,13 +275,15 @@
     min-width: 5rem;
 }
 
-.text .hyperlink {
+.text .hyperlink,
+.footer .hyperlink {
     height: 1rem;
     width: auto;
+    min-width: min-content;
     font-size: inherit;
-    max-width: inherit;
     display: inline-block;
     color: rgb(var(--base));
+    padding: 0;
 }
 
 /* 
@@ -267,7 +304,7 @@
 }
 
 .nav .hyperlink{
-    font-size : 1.2rem;
+    font-size : clamp(16px, 1.6vw ,1.2rem);
     opacity: .6;
 }
 
@@ -282,6 +319,12 @@
     text-decoration: underline rgb(var(--main)) .1rem;
 }
 
+.nav .socials{
+    display: none;
+    width: 0;
+    height: 0;
+}
+
 .menu.toggle {
     display: none;
     height: 0;
@@ -293,12 +336,13 @@
 
     .nav {
         position: absolute;
-        height: calc(100vh - var(--header-height) + 1rem);
+        height: 100vh;
         width: 100%;
-        top: calc(var(--header-height) - 1rem);
+        top: 0;
         left : 0;
         display: flex;
         justify-content: end;
+        z-index: 1;
     }
 
     .nav .content{
@@ -310,37 +354,34 @@
     .nav .content.display{
         width: 70%;
         height: 100%;
+        padding-top: var(--header-height);
         position: relative;
         display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        background-color: rgb(var(--bg));
     }
 
     .nav .hyperlink{
-        font-size : 1.5rem;
+        font-size : clamp(20px, 2vw ,1.5rem);
         height: fit-content;
         padding: 2rem;
         opacity: 1;
     }
 
-    .menu.toggle{
+    .nav .socials {
         display: flex;
-        margin-left: .5rem;
+        width: 100%;
         height: auto;
-        width: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
-    .dark .nav .content.display{
-        background-color: rgb(var(--dark-bg));
-    }
-
-    .light .nav .content.display{
-        background-color: white;
-    }
-
-    .light .nav .hyperlink:hover{
-        background-color: white;
+    .menu.toggle{
+        display: block;
+        margin-left: .5rem;
+        height: 100%;
     }
     
 }
@@ -360,6 +401,31 @@
     border-radius: 50px 15px;
 }
 
+/* 
+    Social Styling
+*/
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.socials .text-bubble {
+    position: absolute ;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: display-handle .25s linear forwards ;
+    color: white;
+    font-size: clamp(14px, 1.1vw , .9rem);
+    background-color: rgb(var(--base));
+    padding: 0 .5rem;
+    border-radius: 1rem;
+}
+
 
 /* 
     Theme Switcher Styling
@@ -367,37 +433,47 @@
 
 .theme-switch.outer{
     position: relative;
+    max-width: 4rem;
     width: 4rem;
     height: 2rem;
     border-radius: 40px;
-    z-index: 1;
+    margin-right: .5rem;
 }
 
 .theme-switch .inner{
     display: flex;
-    width: 100%;
+    width: 4rem;
     height: 100%;
-    padding: .2rem;
+    padding: .2rem .4rem;
     align-items: center;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 .theme-switch .selector{
     position: absolute;
-    width: 40%;
-    height: 80%;
+    width: 1.6rem;
+    height: 1.6rem;
     top: 10%;
 
     border-radius: 100%;
-    background: rgb(255,255,255);
+    background: rgb(var(--selector));
 }
 
 /* Conditional Style Overrides */
+
+.hidden {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
 .parent-height {
     height: 100%;
 }
 
-.graphic.no-resize{
-    height: auto;
-    width: auto;
+#Interactables{
+    z-index: 2;
+    min-width: 6rem;
+    margin-right: 1rem;
 }

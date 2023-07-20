@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import Graphic from '../small/Graphic' ;
 import { Size } from '../../../common/types'
 import NavMenu from '../small/NavMenu' ;
 import ThemeSwitcher from '../small/ThemeSwitcher' ;
-import { XMarkIcon } from '@heroicons/react/24/outline' ;
 import ScrollLock from '../small/ScrollLock' ;
 
 
 const Header = () => {
 
+    // add mobile menu
     const [menuTrigger, setMenuTrigger] = useState(false) ;
     const [clicked, setClicked] = useState(false) ;
 
@@ -17,25 +17,56 @@ const Header = () => {
             return !prevState
         })
     }
-    const handleMenuToggle = () => {
-        setMenuTrigger(!menuTrigger) ;
-
+    const blurBackground = (blur:boolean) => {
         let bg = document.getElementById('PageContent') ;
 
         if (bg != null){
-            bg.style.filter = !menuTrigger? 'blur(10px)' : 'blur(0)' ;
+            bg.style.filter = blur? 'blur(10px)' : 'blur(0)' ;
         }
     }
 
+    const handleMenuToggle = () => {
+        setMenuTrigger(!menuTrigger) ;
+
+        blurBackground(!menuTrigger) ;
+    }
+
+    // revert any changes if screen size is changed from mobile to 'large' (screen width >640px).
+    const [lastWidth, setLastWidth] = useState(0) ;
+    useEffect(() => {
+        let threshold = 640 ;
+
+        const revertMobileChanges = () => {
+
+            let currWidth = visualViewport?.width ;
+
+            // only run when going from mobile to larger.
+            if (lastWidth <= threshold){
+                // revert menu toggle and background blur to default values.
+                if ( currWidth !== undefined && currWidth > threshold){
+                    blurBackground(false) ;
+                    setMenuTrigger(false) ;
+                }
+            }   
+            setLastWidth(currWidth !== undefined ? currWidth : 0) ;
+        }
+    
+        visualViewport?.addEventListener("resize", revertMobileChanges) ;
+
+        return ( () => visualViewport?.removeEventListener("resize", revertMobileChanges)) ;
+    }, [lastWidth]) ;
+    
+
     // add (dis)appearing effect.
-    const [toggle, setToggle] = useState(true) ;
+    const [toggle, setToggle] = useState<boolean | null>(null) ;
+
     useEffect(() => {
 
         // save last page pos; 0 on page load.
         let lastPos = window.pageYOffset ;
 
         // only toggle header when 15 or more pixels have been scrolled.
-        let threshold = 40 ;
+        let threshold = 5 ;
 
         const getScrollDir = () => {
             let currPos = window.pageYOffset ;
@@ -45,44 +76,44 @@ const Header = () => {
 
             // user scrolling in a direction already detected? Don't update.
             if ( showHeader !== toggle && ( 
-                (currPos - lastPos > threshold) || (currPos - lastPos > -threshold)))
+                (lastPos - currPos > threshold) || (currPos - lastPos > threshold)))
             {
                 setToggle(showHeader) ;
+            } else if (currPos === 0) {
+                setToggle(true) ;
             }
 
             lastPos = currPos ;
-
-            //
         } ;
 
-        window.addEventListener("scroll", getScrollDir) ;
+        document.addEventListener("scroll", getScrollDir) ;
 
         // remove EL as part of cleanup
-        return (() => window.removeEventListener("scroll", getScrollDir)) ;
+        return (() => document.removeEventListener("scroll", getScrollDir)) ;
     }, [ toggle ] ) ; // prevent element reloads when toggle changed.
 
     return (
-        <div className={`header outer ${toggle? 'show' : 'hide'}`}>
+        <div className={`header outer ${toggle? 'show' : toggle!== null ? 'hide' : ''}`}>
             <div className='inner'>
                 <div className='logocard'>
-                    <Graphic size={Size.Large} graphic_src={'/logos/personal_logo.png'} disable_inversion={true} desc='My Logo' extra_styles='no-resize'/>
+                    <Graphic size={Size.Large} graphic_src={'/logos/personal_logo.png'} disable_inversion={true} desc='My Logo'/>
                 </div>
                 < div className='general-flex parent-height'>
                     <NavMenu menuTrigger={menuTrigger}/>
-                    <div className='general-flex'>
+                    <div className='general-flex' id="Interactables">
                         <ThemeSwitcher />
                         <div className='menu toggle' onClick={() => { handleClick() ; handleMenuToggle() ;  }}> 
-                            <div className='enclosed'> 
-                                {
-                                    !menuTrigger ?
-                                        <XMarkIcon className={`graphic small invert ${clicked? 'rotateRight' : 'sideways'}`} onAnimationEnd={handleClick} />
-                                        :
-                                        <div className='parent-height'>
-                                            <XMarkIcon className={`graphic small invert ${clicked? 'rotateLeft' : 'straight'}`} onAnimationEnd={handleClick} />
-                                            <ScrollLock />
-                                        </div>
-                                }
-                            </div>
+                            {
+                                !menuTrigger ?
+                                    <div className='parent-height'>
+                                        <div className={`x-mark graphic medium invert ${clicked? 'rotateRight' : 'sideways'}`} onAnimationEnd={handleClick} />
+                                    </div>
+                                    :
+                                    <div className='parent-height'>
+                                        <div className={`x-mark graphic medium invert ${clicked? 'rotateLeft' : 'straight'}`} onAnimationEnd={handleClick} />
+                                        <ScrollLock />
+                                    </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -92,4 +123,4 @@ const Header = () => {
     )
 }
 
-export default Header ;
+export default memo(Header) ;

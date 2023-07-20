@@ -1,58 +1,56 @@
-import React from 'react' ;
+import { memo } from 'react' ;
 import TextContainer from './components/small/TextContainer' ;
 import TestTextContainer from '../common/test/TestTextContainer' ;
 import HyperLink from './components/small/HyperLink' ;
 import { LinkType } from '../common/types' ;
-import SocialIcon from './components/small/SocialIcon' ;
 
-function Main() {
+
+const Main = () =>  {
+
+
     return (
         <div className='content-container' id='PageContent'>
             
-            <div className='page-spacer' id='About'>
-                {/* Intro Section */}
+            <div className='page-spacer' >
 
-                <div className='general-flex'>
-                    <img className='portrait' src={require('./../assets/other/relaxed_pfp.jpg')} alt='Relaxed portrait of me.' />
-                </div>
-
-                <TextContainer title='Malakai Spann' id='Introduction'>
-                    <p className='subtitle'> Developer,</p>
-                    <p className='subtitle'> Expert Google Search User,</p>
-                    <p className='subtitle'> Tech Enthusiast</p>
-
-                    <p className='paragraph'>
-                        Hey! I'm a 4th year Computer Science major at Florida Tech focused
-                        on software development and data processing. My future plans include continuing
-                        my studies and expanding further into artificial intelligence, information assurance, and full-stack development.
-                    </p>
-
-                    <div className='subtitle'>
-                        <p>Current Interests:</p>
+                <TextContainer id='Opening'>
+                    <div className='general-flex' id='Portrait'>
+                        <div className='portrait' />
                     </div>
+                    <div>
+                        <p id='Greeting'> Hello <span className='hand-wave'>👋🏽</span>, my name is</p>
+                        <p id='Name'>Malakai Spann </p>
+                        <p className='subtitle' id='Occupation1'> Developer,</p>
+                        <p className='subtitle' id='Occupation2'> Expert Google Search User,</p>
+                        <p className='subtitle' id='Occupation3'> Tech Enthusiast</p>
 
-                    <div className='paragraph indent italic'>
-                        <p> application development (mobile & web), data processing, data visualization, information assurance</p>
+                        <p className='paragraph' id='Introduction'>
+                            I'm a 4th year Computer Science major at <HyperLink type={LinkType.External} to='https://www.fit.edu/'> Florida Tech </HyperLink> focused
+                            on software development and data processing. In short, I make cool stuff.
+                        </p>
+
+                        <div id='Interests'>
+                            <div className='subtitle'>
+                                <p>Current Interests:</p>
+                            </div>
+
+                            <div className='paragraph indent italic'>
+                                <p> application development (mobile & web), data processing, data visualization, information assurance</p>
+                            </div>
+                        </div>
+                        <div className='list' id='Graduation-Date'>
+                            <p className='date'> Dec 2023 </p>
+                            <p className='desc'> Graduation : B.S. Computer Science </p>
+                        </div>
                     </div>
-
-                    <div className='list'>
-                        <p className='date'> Dec 2023 </p>
-                        <p className='desc'> Graduation : B.S. Computer Science </p>
-                    </div>
-
                 </TextContainer>
-
-                <div className='socials' id='Socials'>
-                    <SocialIcon link='https://github.com/KayDVC' link_text='@KayDVC' graphic_src='/logos/github-mark.png' graphic_desc='Link to my Github account.' keep_invert={true}/>
-                    <SocialIcon link='mailto:MalakaiSpann@gmail.com' link_text='MalakaiSpann@gmail.com' graphic_src='/logos/gmail.png' graphic_desc='Link to my email.'/>
-                    <SocialIcon link='https://linkedin.com/in/malakaispann' link_text='Malakai Spann' graphic_src='/logos/In-Blue.png' graphic_desc='Link to my LinkedIn account.'/>
-                </div>
 
             </div>
 
             <TestTextContainer/>
 
-            <TextContainer id='Experience' title='Professional Experience' >
+            <TextContainer id='Experience' >
+                <p className='title'> Professional Experience</p>
                 <div className='list'>
                     <p className='date'> 2019 - 2023 </p>
 
@@ -92,4 +90,4 @@ function Main() {
     )
 }
 
-export default Main
+export default memo(Main)

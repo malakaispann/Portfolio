@@ -1,42 +1,6 @@
 /* 
-    Footer Styling
-*/
-
-.copyright {
-    display: flex;
-    width: 100%;
-    font-size: .9rem;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 
     Misc Styling
 */
-
-.enclosed{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    height: auto;
-    width: auto;
-    padding: 1rem;
-    position: relative;
-}
-
-.general-flex{
-   display:flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.empty {
-    height: 0;
-    width: 0;
-    display: none;
-}
-
 .logocard {
     display : flex;
     align-items: center;
@@ -52,50 +16,17 @@
     transform: rotate(45deg);
 }
 
-/* 
-    Social Styling
-*/
-
-.socials {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    padding-top: 2rem; 
-}
-
-.socials .text-bubble {
-    position: absolute ;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: slide-up-and-appear .25s linear forwards ;
-    color: white;
-    font-size: .9rem;
-    background-color: rgb(var(--base));
-    padding: 0 .5rem;
-    border-radius: 1rem;
-}
-
 
 /* 
     Text Styling
 */
 
 .text{
-    font-size: 1rem;
+    font-size: clamp(14.5px, 1.3vw , 1rem);
 }
 
 .text .indent{
     text-indent: 2rem;
-}
-
-@media only screen and (max-width:640px) {
-    
-    .text .indent {
-        text-indent: 0;
-    }
 }
 
 .text .italic{
@@ -103,12 +34,11 @@
 }
 
 .text .title {
-    min-height: 2rem;
     width: 100%;
     margin: .5rem 0;
 
     text-align: justify;
-    font-size: 1.33rem;
+    font-size: clamp(20px, 2vw ,1.5rem);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -120,18 +50,9 @@
     min-height: 1rem;
     width: 100%;
     margin: 0 1rem;
-    letter-spacing: 1.3px;
-    font-size: 1.1rem;
+    font-size: clamp(14px, 1.4vw ,1.1rem);
     color : rgb(var(--main));
 }
-
-@media only screen and (max-width:640px) {
-    
-    .text .subtitle{
-        margin: 0;
-    }
-}
-
 
 .text .paragraph {
     display: flex;
@@ -139,7 +60,7 @@
     width: 100%;
     padding: .5rem 0;
     margin: 0 0 .5rem 0;
-
+    font-size: clamp(14px, 1.2vw ,1rem);
     letter-spacing: 1.1px;
 }
 
@@ -158,27 +79,14 @@
     max-width: 10rem;
     overflow-y: auto;
     overflow-x: hidden;
+    color: rgb(var(--main));
 } 
 
 .list .desc {
     padding-left: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-@media only screen and (max-width:640px) {
-    
-    .text .date {
-        float: none;
-        width: 100%;
-        padding: 0 0 .5rem;
-    }
-
-    .text .desc {
-        float: none;
-        width: 100%;
-        padding-left: 0;
-    }
+    font-size: clamp(14px, 1vw ,1rem);
 }
 
 .list .sublist {
@@ -189,9 +97,130 @@
     text-decoration: dotted;
 }
 
-/* 
-    Theme Color Styling 
-*/
 
+@media only screen and (max-width:640px) {
+    
+    .text .date {
+        float: none;
+        width: 100%;
+        padding: 0 0 .5rem;
+    }
+    .text .desc {
+        float: none;
+        width: 100%;
+        padding-left: 0;
+    }
+    .text .indent {
+        text-indent: 0;
+    }
+    .text .subtitle{
+        margin: 0;
+    }
+}
+
+/* 
+    Introduction
+*/
+#Opening{
+    --delay-offset: .1s;
+
+    --wave-duration: 3s;
+    --name-duration: .3s;
+    --occ1-duration: .6s;
+    --occ2-duration: .3s;
+    --portrait-duration: .3s;
+    --occ1-delay: calc(var(--name-duration) + var(--delay-offset));
+    --occ2-delay: calc( (var(--occ1-duration)*.75) + var(--occ1-delay) + var(--delay-offset) );
+    --occ3-delay: calc(var(--occ2-duration) + var(--occ2-delay) + var(--delay-offset));      
+    --preface-delay: calc(var(--occ3-delay) + var(--occ2-duration) + var(--delay-offset));
+
+    --wave-iterations: 10;
+
+}
+
+#Opening .subtitle {
+    font-size: clamp(16px , 1.4vw, 1.2rem);
+    margin-bottom: .2rem;
+}
+
+.hand-wave {
+    transform-origin:  center 70%;
+    margin: 0 .1rem;
+    display: inline-block;
+    animation: wave var(--wave-duration) var(--wave-iterations) both;
+    animation-delay: var(--preface-delay);
+}
+#Greeting{
+    font-size: clamp(16px, 1.4vw, 1.1rem);
+    margin-bottom: .5rem;
+}
+#Name{
+    /* name */
+    animation: appear-overshoot-from-below var(--name-duration);
+    font-size: clamp(32px, 4.5vw, 4rem);
+    position: relative;
+    margin-bottom: .5rem;
+
+    /* Removes small margin created when font size increases. */
+    left: -3px;
+}
+#Occupation1 {
+    overflow: hidden;
+    width: 0;
+    min-width: 0;
+    animation: typing var(--occ1-duration) steps(11, end) var(--occ1-delay) forwards;
+}
+#Occupation2 {
+    animation: appear-from-below var(--occ2-duration) var(--occ2-delay) both;
+}
+#Occupation3{
+    animation: appear-from-below var(--occ2-duration) var(--occ3-delay) both;
+}
+#Opening .portrait {
+    position: relative;
+    top: -1rem;
+    left: -1rem;
+}
+#Portrait{
+    animation: drop-from-above var(--portrait-duration) var(--preface-delay) both;
+    float: right;
+    margin-left: 2rem;
+    height: min-content;
+    border: solid rgba(var(--main), .5) 0.2rem;
+}
+#Introduction{
+    display: block;
+    animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
+}
+#Graduation-Date, #Interests{
+    animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
+}
+
+@media only screen and (max-width: 640px){
+    .page-spacer:has(#Opening) {
+        padding-top: 2rem;
+        justify-content: start;
+    }
+
+    #Opening {
+        flex-direction: column;
+    }
+    #Opening * {
+        margin-bottom: 0;
+    }
+    .hand-wave {
+        margin: 0 .1rem;
+    }
+    #Portrait{
+        width: min-content;
+        margin: 0 auto 1rem;
+        float: none;
+    }
+    #Opening .portrait{
+        left: .5rem;
+    }
+
+
+}
 
 

@@ -1,4 +1,3 @@
-import React from 'react' ;
 import { useThemeContext } from '../contexts/ThemeContext' ;
 import '../../styles/component_styles.css'
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 
 // A simple utility that when rendered, prevents scrolling. 
 // Returns scrolling ability upon removal.
@@ -11,8 +11,8 @@ const ScrollLock = () => {
     }) ;
 
     return (
-        <div className='empty'></div>
+        <div className='hidden'></div>
     )
 }
 
-export default ScrollLock
+export default memo(ScrollLock) ;

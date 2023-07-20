@@ -1,4 +1,4 @@
-import { useState } from 'react' ;
+import { useState, memo } from 'react' ;
 import Graphic from './Graphic' ;
 import { Size } from '../../../common/types' ;
 
@@ -18,12 +18,17 @@ const SocialIcon = ({ link, link_text, graphic_desc, graphic_src, keep_invert } 
         setHover(true) ;
     }
 
-    const handleNotHover = () => {
+    const handleNotHover = (e: React.MouseEvent) => {
+
+        let target: HTMLElement = e.target as HTMLElement ;
+
+        target.classList.add('bounce') ;
+
         setHover(false) ;
     }
 
     return (
-        <div className='enclosed ' onMouseOver={handleHover} onMouseLeave={handleNotHover}>
+        <div className='enclosed ' onMouseOver={handleHover}  onMouseLeave={e => handleNotHover(e)}>
             <a href={link} >
                 <Graphic size={Size.Medium} graphic_src={graphic_src} desc={graphic_desc} extra_styles={keep_invert? 'keep-invert' : ''}/>
             </a>
@@ -36,4 +41,4 @@ const SocialIcon = ({ link, link_text, graphic_desc, graphic_src, keep_invert } 
 
 }
 
-export default SocialIcon ;
+export default memo(SocialIcon) ;

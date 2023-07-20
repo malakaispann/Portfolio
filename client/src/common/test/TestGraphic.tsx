@@ -1,4 +1,3 @@
-import React from 'react'
 import Graphic from '../../pages/components/small/Graphic'
 import { Size } from '../types'
 

@@ -1,7 +1,12 @@
 :root {
-    --header-height: 5rem;
-    --footer-height: 3rem;
+    --header-height: 4rem;
+    --footer-height: 9rem;
     --content-max-width: 1024px;
+
+    /* shared colors */
+    --white: 255, 255, 255;
+    --black: 0, 0, 0;
+    --slate-grey: 110, 126, 133;
 }
 
 
@@ -14,36 +19,57 @@
     font-weight: 400;
     min-width: min-content;
 }
-
-html {
+html{
     font-size: 16px;
     scroll-behavior: smooth;
+    
+}
+body{
+    overscroll-behavior-x: none;
+}
+
+::-webkit-scrollbar {
+    width: .6rem;
+}
+
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(var(--slate-grey), .5);
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--slate-grey), .7);
 }
 
 /* Take up the entire viewport. */
 .site-container {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    overscroll-behavior: none;
-  }
+}
   
-  /* Take the entire available space for pages */
-  .page-container {
-      position: relative;
-      width: 100%;
-      min-height: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-  
-  .content-container {
-      padding: 0 6rem;
-      max-width: var(--content-max-width);
-  
-      /* see component_styles.css */
-      padding-bottom: calc(var(--footer-height) + 1rem);
-  }
+/* Take the entire available space for pages */
+.page-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content-container {
+    padding: 0 6rem;
+    max-width: var(--content-max-width);
+
+    /* see component_styles.css */
+    padding-bottom: calc(var(--footer-height) + 1rem);
+
+    /* Easy solution to dynamic styling done in Header component. */
+    filter: blur(0px);
+}
 
 @media screen and (max-width: 640px) {
     .content-container{

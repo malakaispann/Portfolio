@@ -17,20 +17,37 @@ enum Mode{
 
 export const ThemeContextProvider = ({ children }: Props) => {
 
-    const [theme, setTheme] = useState(Mode.Light) ;
+    // get user theme preference.
+    let dark_pref = window.matchMedia('(prefers-color-scheme: dark)') ;
 
-    const toggleTheme = () => {
-        if (theme === Mode.Light) {
-            setTheme(Mode.Dark) ;
-        } else {
-            setTheme(Mode.Light) ;
-        }
-    }
+    const [theme, setTheme] = useState(dark_pref.matches ? Mode.Dark : Mode.Light) ;
+
 
     const getTheme = () => {
         return theme===Mode.Light ? 'light' : 'dark'
     }
+
+    const toggleTheme = () => {
+        
+        setTheme(() => {
+            return theme === Mode.Light ? Mode.Dark : Mode.Light ;
+        })
+        setBackground() ;
+    }
     
+    const setBackground = () => {
+        let body = document.body ;
+
+        if (theme === Mode.Light){
+            body.classList.remove('dark') ;
+        } else {
+            body.classList.add('dark') ;
+        }
+    }
+
+    setBackground() ;
+
+
     return (
         <ThemeContext.Provider value={{ theme,
             setTheme,

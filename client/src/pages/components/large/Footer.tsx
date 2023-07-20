@@ -1,17 +1,19 @@
-import React from 'react'
-
+import { memo } from "react" ;
+import { LinkType } from "../../../common/types"
+import HyperLink from "../small/HyperLink"
+import SocialFeed from "../small/SocialFeed" ;
 
 const Footer = () => {
 
     return (
         <div className='footer outer'>
             <div className='inner' >
-                <div className='copyright'>
-                    Copyright &copy; {(new Date()).getFullYear()} Malakai Spann. All rights reserved.
-                </div>
+                <SocialFeed />
+                <p> Made with <HyperLink type={LinkType.External} to="https://react.dev/"> React</HyperLink> and lots of Good 'Ole Determination.</p>
+                <p> &copy; {(new Date()).getFullYear()} Malakai Spann.</p>
             </div>
         </div>
     )
 }
 
-export default Footer
+export default memo(Footer)

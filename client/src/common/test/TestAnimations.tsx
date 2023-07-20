@@ -1,4 +1,3 @@
-import React from 'react'
 import TextContainer from '../../pages/components/small/TextContainer'
 import { useThemeContext } from '../contexts/ThemeContext'
 import '../../styles/component_styles.css'

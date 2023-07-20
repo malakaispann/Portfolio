@@ -1,5 +1,6 @@
 // Site Navigation and Routing
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
+import {  memo } from 'react' ;
 
 // Contexts
 import { ThemeContextProvider } from './contexts/ThemeContext' ;
@@ -25,7 +26,7 @@ const PageLayout = () => {
     let theme = getTheme() ;
 
     return (
-        <div className={`page-container background ${theme}`}>
+        <div className={`page-container background ${theme} `}>
             <Header />
             <Outlet />
             <Footer />
@@ -33,13 +34,15 @@ const PageLayout = () => {
     )
 }
 
+const PageMemo = memo(PageLayout) ;
+
 const SiteLayout = () => {
     return (
         <Router>
             <ThemeContextProvider> 
                 <div className='site-container'>
                     <Routes>
-                        <Route path='/' element={<PageLayout/>}>
+                        <Route path='/' element={<PageMemo/>}>
                             <Route index element={<Main />} />
                             <Route path='projects' element={<Projects/>} />
                         </Route>
@@ -50,4 +53,4 @@ const SiteLayout = () => {
     )
 }
 
-export default SiteLayout
+export default memo(SiteLayout)
