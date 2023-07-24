@@ -1,0 +1,477 @@
+/* 
+    Theme Color Styling 
+
+    Included at the top so that color overwrites work as expected.
+
+*/
+.light {
+    --bg: var(--white);
+
+    --main: 69, 149, 141;
+    --selector: var(--white);
+    --selector-outer: 64, 70, 94;
+
+    --text: var(--black);
+    --hyperlink: var(--black);
+
+    --graphic-filter: grayscale(100%) invert(0%);
+
+    --footer: var(--black);
+    
+}
+
+.dark {
+    --bg: 34, 34, 34;
+    --main: 110 , 238, 226;
+    
+    --selector : var(--slate-grey);
+    --selector-outer : 232, 233, 237; 
+
+    --text: var(--white);
+    --hyperlink: var(--white);
+
+    --graphic-filter: grayscale(100%) invert(100%);
+    
+    --footer: var(--white);
+
+}
+
+body.dark{
+    background-color: rgb(34, 34, 34);
+}
+.dark.testing {
+    color: white;
+}
+.dark .theme-switch .selector {
+    left: -5%;
+    transform: translateX(150%);
+}
+.dark .theme-switch .selector.slide{
+    animation: slideRight .25s linear forwards;
+}
+
+.light.testing {
+    color: red;
+}
+
+.light .theme-switch .selector {
+    left: 5%;
+    transform: translateX(0);
+}
+.light .theme-switch .selector.slide{
+    animation: slideLeft .25s linear forwards;
+}
+.light .theme-switch .graphic.invert {
+    filter: invert(100%);
+}
+
+
+/* 
+    General Styling    
+*/
+
+.page-spacer {
+    min-width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enclosed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    height: auto;
+    width: auto;
+    padding: 1rem;
+    position: relative;
+}
+
+.general-flex{
+   display:flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.background{
+    background-color: rgb(var(--bg));
+}
+
+.hyperlink {
+    color: rgb(var(--hyperlink));
+}
+.theme-switch.outer {
+    background-color: rgb(var(--selector-outer));
+}
+.theme-switch .selector{
+    background-color: rgb(var(--selector));
+}
+
+/* 
+    Footer Styling
+*/
+
+.footer.outer{
+    position: absolute;
+    height: var(--footer-height);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex; 
+    justify-content: center;
+    color: rgb(var(--text));
+}
+
+@media only screen and (max-width:640px) {
+    
+    .footer.outer {
+        padding: 0 2rem;
+        text-align: center;
+    }
+}
+
+.footer .inner{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding: .5rem 3rem 1rem;
+}
+
+.footer p {
+    width: 100%;
+    font-size: clamp(13px, 1.1vw, .9rem);
+    text-align: center;
+}
+
+/* 
+    Graphic styling 
+*/
+
+.portrait {
+    height: clamp(120px, 30vw ,160px);
+    width: clamp(120px, 30vw ,160px);
+    background-image: url(../assets/other/relaxed_pfp.jpg);
+    background-size: contain;
+    user-select: none;
+}
+
+.graphic{
+    user-select: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+.graphic.large{
+    height: clamp(50px, 5vw ,60px);
+    width: clamp(50px, 5vw ,60px);
+}
+.graphic.medium {
+    height: clamp(25px, 4vw , 30px);
+    width: clamp(25px, 4vw , 30px);
+}
+.graphic.small {
+    height: clamp(15px, 3vw ,20px);
+    width: clamp(15px, 3vw ,20px);
+}
+.graphic img {
+    max-width: 100%;
+    min-width: 1px;
+    width: 100%;
+    height: auto;
+}
+
+.graphic .invert,
+.graphic.invert {
+    filter: var(--graphic-filter);
+}
+
+.enclosed.bounce a {
+    animation: bounce 1.2s ease-out forwards;
+}
+
+.enclosed:hover > a {
+    animation: slideUp .15s ease-in forwards;
+    /* box-shadow: -.5rem 4rem 2rem -7px grey; */
+}
+
+.enclosed:hover > a .graphic img{
+    filter: grayscale(0%) invert(0%)  ; 
+}
+
+.dark .enclosed:hover > a .graphic.keep-invert img{
+    filter: grayscale(100%) invert(100%);
+}
+/* This one's for you safari. I hate you.*/
+.sun{
+    background-image: url(../assets/other/sun.svg);
+}
+.moon{
+    background-image: url(../assets/other/moon.svg);
+}
+.x-mark{
+    background-image: url(../assets/other/x-mark.svg);
+    background-size: contain;
+}
+
+/* 
+    Header Styling
+*/
+
+.header.outer{
+    width: 100%;
+    height: var(--header-height);
+    z-index: 2;
+    position: sticky;
+    top: 0 ;
+    padding: 0 3rem;
+    background-color: rgb(var(--bg));
+}
+.header.outer.show{
+    animation: slide-down-and-appear .75s forwards;
+}
+.header.outer.hide{
+    animation-name: slide-up-and-disappear, add-shadow;
+    animation-duration: .45s, .2s;
+    animation-delay: 0s, .45s;
+    animation-fill-mode: forwards, forwards;
+}
+.header.outer.show.shadow{
+    box-shadow: 0 1px 5px 2px rgba(34, 34, 34, .5);
+}
+.header .inner{
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 0;
+}
+@media only screen and (max-width: 640px){
+    .header.outer {
+        padding: 0 .5rem 0 1rem;
+    }
+}
+
+
+/* 
+    HyperLink Styling
+*/
+
+.hyperlink {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    padding:0 .5rem;
+    min-width: 5rem;
+}
+
+.text .hyperlink,
+.footer .hyperlink {
+    height: auto;
+    width: auto;
+    min-width: min-content;
+    font-size: inherit;
+    display: inline;
+    color: rgb(var(--main));
+    padding: 0;
+}
+
+/* 
+    Navigator Menu Styling
+*/
+.nav {
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem 0;
+}
+
+.nav .content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav .hyperlink{
+    font-size : clamp(16px, 1.6vw ,1.2rem);
+    opacity: .6;
+}
+
+.nav .hyperlink:hover{
+    border-radius: 0 0 10px 10px;
+    opacity: 1;
+    background-color: rgba(var(--main), .5);
+}
+
+.nav .hyperlink.active{
+    text-underline-offset: 6px;
+    text-decoration: underline rgb(var(--main)) .1rem;
+}
+
+.nav .socials{
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.menu.toggle {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+
+@media only screen and (max-width: 640px) {
+
+    .nav:has(.content.display) {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left : 0;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 1;
+    }
+
+    .nav .content{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .nav .content.display{
+        width: 70%;
+        height: 100%;
+        padding-top: var(--header-height);
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(var(--bg));
+    }
+
+    .nav .hyperlink{
+        font-size : clamp(20px, 2vw ,1.5rem);
+        height: fit-content;
+        padding: 2rem;
+        opacity: 1;
+    }
+
+    .nav .socials {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .menu.toggle{
+        display: block;
+        margin-left: .5rem;
+        height: 100%;
+    }
+    
+}
+
+
+/* 
+    Text Styling
+*/
+
+.textbox-container {
+    min-height: 6rem;
+    height: auto;
+    width: 100%;
+    min-width: min-content;
+    padding: 1.5rem 2rem 1rem;
+    margin: 1rem 0;
+    border-radius: 50px 15px;
+}
+
+/* 
+    Social Styling
+*/
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.socials .text-bubble {
+    position: absolute ;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: display-handle .25s linear forwards ;
+    color: white;
+    font-size: clamp(14px, 1.1vw , .9rem);
+    background-color: rgba(var(--main), .6);
+    padding: 0 .5rem;
+    border-radius: 1rem;
+}
+
+
+/* 
+    Theme Switcher Styling
+*/
+
+.theme-switch.outer{
+    position: relative;
+    max-width: 4rem;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 40px;
+    margin-right: .5rem;
+}
+
+.theme-switch .inner{
+    display: flex;
+    width: 4rem;
+    height: 100%;
+    padding: .2rem .4rem;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+.theme-switch .selector{
+    position: absolute;
+    width: 1.6rem;
+    height: 1.6rem;
+    top: 10%;
+
+    border-radius: 100%;
+    background: rgb(var(--selector));
+}
+
+/* Conditional Style Overrides */
+
+.hidden {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.parent-height {
+    height: 100%;
+}
+
+#Interactables{
+    z-index: 2;
+    width: 6rem;
+    margin-right: 1rem;
+}
