@@ -16,8 +16,8 @@ const NavMenu = ({ menuTrigger, extra_function  }: Props) => {
                 <HyperLink type={LinkType.Internal} to='/#About' extra_styles='active' extra_function={extra_function? extra_function: undefined}>
                     About Me
                 </HyperLink>
-                <HyperLink type={LinkType.Internal} to='/#Experience' extra_function={extra_function? extra_function: undefined}>
-                    Experience
+                <HyperLink type={LinkType.Internal} to='/#Skills' extra_function={extra_function? extra_function: undefined}>
+                    Skills
                 </HyperLink>
                 <HyperLink type={LinkType.Internal} to='/#Projects' extra_function={extra_function? extra_function: undefined}>
                     Projects

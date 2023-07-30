@@ -152,50 +152,78 @@
         font-size: clamp(16px , 1.4vw, 1.2rem);
         margin-bottom: .2rem;
     }
+
+    #Greeting{
+        font-size: clamp(16px, 1.4vw, 1.1rem);
+        margin-bottom: .5rem;
+    }
+    #Name{
+        font-size: clamp(32px, 4.5vw, 4rem);
+        position: relative;
+        margin-bottom: .5rem;
+    
+        /* Removes small margin created when font size increases. */
+        left: -3px;
+    }
+    #Occupation1 {
+        overflow: hidden;
+        width: 0;
+        min-width: 0;
+    }
+    #Introduction{
+        display: block;
+        margin-top: 1rem;
+    }
 }
 
-#Greeting{
-    font-size: clamp(16px, 1.4vw, 1.1rem);
-    margin-bottom: .5rem;
-}
-#Name{
-    font-size: clamp(32px, 4.5vw, 4rem);
-    position: relative;
-    margin-bottom: .5rem;
-
-    /* Removes small margin created when font size increases. */
-    left: -3px;
-}
-#Occupation1 {
-    overflow: hidden;
-    width: 0;
-    min-width: 0;
-}
-#Opening .portrait {
-    position: relative;
-    top: -1rem;
-    left: -1rem;
-}
-#Portrait{
-    float: right;
-    margin-left: 2rem;
-    height: min-content;
-    border: solid rgba(var(--main), .5) 0.2rem;
-}
-#Introduction{
-    display: block;
-}
 .page-spacer:has(#Opening){
     min-height: calc(100vh - var(--header-height));
 }
 
+#Opening.run{
+    .hand-wave {
+        animation: wave var(--wave-duration) var(--wave-iterations) both;
+        animation-delay: var(--preface-delay);
+    }
+    #Name{
+        animation: appear-overshoot-from-below var(--name-duration);
+    }
+    #Occupation1 {
+        animation: typing var(--occ1-duration) steps(11, end) var(--occ1-delay) forwards;
+    }
+    #Occupation2 {
+        animation: appear-from-below var(--occ2-duration) var(--occ2-delay) both;
+    }
+    #Occupation3{
+        animation: appear-from-below var(--occ2-duration) var(--occ3-delay) both;
+    }
+    #Introduction, #Graduation-Date, .socials{
+        animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
+    }
+}
 
+
+#About{
+    .portrait {
+        position: relative;
+        top: -1rem;
+        left: -1rem;
+    }
+    #Portrait{
+        float: right;
+        margin-left: 2rem;
+        height: min-content;
+        border: solid rgba(var(--main), .5) 0.2rem;
+    }
+}
+
+#About.run{
+    #Portrait{
+        animation: drop-from-above var(--portrait-duration) var(--preface-delay) both;
+    }
+}
 
 @media only screen and (max-width: 640px){
-    .page-spacer:has(#Opening) {
-        padding-top: 3rem;
-        justify-content: start;
-    }
 
     #Opening {
         flex-direction: column;
@@ -216,37 +244,16 @@
             margin-bottom: 0;
         }
     }
+
+    #About {
+        .portrait{
+            left: .5rem;
+        }
+        #Portrait{
+            width: min-content;
+            margin: 0 auto 2rem;
+            float: none;
+        }
+    }
     
-    #Portrait{
-        width: min-content;
-        margin: 0 auto 1rem;
-        float: none;
-    }
 }
-
-#Opening.run{
-    .hand-wave {
-        animation: wave var(--wave-duration) var(--wave-iterations) both;
-        animation-delay: var(--preface-delay);
-    }
-    #Name{
-        animation: appear-overshoot-from-below var(--name-duration);
-    }
-    #Occupation1 {
-        animation: typing var(--occ1-duration) steps(11, end) var(--occ1-delay) forwards;
-    }
-    #Occupation2 {
-        animation: appear-from-below var(--occ2-duration) var(--occ2-delay) both;
-    }
-    #Occupation3{
-        animation: appear-from-below var(--occ2-duration) var(--occ3-delay) both;
-    }
-    #Portrait{
-        animation: drop-from-above var(--portrait-duration) var(--preface-delay) both;
-    }
-    #Introduction, #Graduation-Date, .socials{
-        animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
-    }
-}
-
-

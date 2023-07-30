@@ -25,13 +25,13 @@ html{
 }
 body{
     overscroll-behavior-x: none;
+    z-index: 99;
 }
 
 ::-webkit-scrollbar {
     width: .6rem;
-}
+}  
 
-  
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgba(var(--slate-grey), .5);
@@ -57,6 +57,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: auto;
 }
 
 .content-container {

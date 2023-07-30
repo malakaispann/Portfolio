@@ -3,9 +3,16 @@ import TextContainer from './components/small/TextContainer' ;
 import HyperLink from './components/small/HyperLink' ;
 import { LinkType } from '../common/types' ;
 import SocialFeed from './components/small/SocialFeed' ;
+import sendEmail from '../../backend/mailer'
 
 
 const Main = () =>  {
+
+    const handleSendEmail = (e:React.MouseEvent) => {
+        e.preventDefault() ;
+
+        sendEmail() ;
+    }
 
     // update 'current'/active section hyperlink styling
     useEffect( () => {
@@ -41,7 +48,7 @@ const Main = () =>  {
 
         } ;
 
-        let sections = [ 'Opening', 'About' , 'Experience'] ;
+        let sections = [ 'Opening', 'About' , 'Skills'] ;
         let styleIO = new IntersectionObserver(highlightHyperlink, { threshold : .5 }) ;
 
 
@@ -75,7 +82,7 @@ const Main = () =>  {
 
         }
 
-        let sections = ['Opening', 'About', 'Experience'] ;
+        let sections = ['Opening', 'About', 'Skills'] ;
         let animationIO = new IntersectionObserver(runLoadAnimation, { threshold : .3 })
 
         sections.forEach ( section => {
@@ -113,14 +120,12 @@ const Main = () =>  {
     }) ;
 
 
+
     return (
         <div className='content-container' id='PageContent'>
             
             <div className='page-spacer' >
                 <TextContainer id='Opening'>
-                    <div className='general-flex' id='Portrait'>
-                        <div className='portrait' />
-                    </div>
                     <div>
                         <p id='Greeting'> Hey <span className='hand-wave'>👋🏽</span>, my name is</p>
                         <p id='Name'>Malakai Spann </p>
@@ -130,7 +135,7 @@ const Main = () =>  {
 
                         <p className='paragraph' id='Introduction'>
                             I'm a 4th-year Computer Science major at <HyperLink type={LinkType.External} to='https://www.fit.edu/'> Florida Tech </HyperLink> focused
-                            on software development and data science. In short, I like to use and make cool stuff.
+                            on software development and data science. In short, I like to make and use cool stuff.
                         </p>
 
                         <div className='list' id='Graduation-Date'>
@@ -144,56 +149,48 @@ const Main = () =>  {
             </div>
 
             <TextContainer id="About">
-                <div className='title'> About Me </div>
-                <div className='paragraph'>
-                    <p>
-                        Strangely enough, my interest in computing started around 2007 when I was gifted my first game system.
-                        I enjoyed researching game mechanics, testing new builds, competing with friends, and taking on 
-                        challenging objectives. The possibilities were only as limited as my resolve. It wasn't long before my 
-                        fascination with games extended to the devices that enabled me to play them and I became captivated by 
-                        the world of computing.
-                    </p>
-                </div>
-                <div className='paragraph'>
-                    <p>
-                        Since then, I've continued chasing my passion by learning software development. I've gained professional 
-                        experience designing, developing, and testing secure software and communicating with clients, teams, and users working for a
-                        <HyperLink type={LinkType.External} to='https://www.lockheedmartin.com/en-us/who-we-are.html' > 
-                            world-renowned Aerospace and Defense corporation.
-                        </HyperLink>
-                    </p>
-                </div>
-                <div id='Interests'>
-                    <div className='subtitle'>
-                        <p>Current Interests:</p>
+                <div>
+                    <div className='general-flex' id='Portrait'>
+                        <div className='portrait' />
                     </div>
+                    <div className='title'> About Me </div>
+                    <div className='paragraph'>
+                        <p>
+                            I became interested in the world of software in 2012 after finding a modding forum for Fallout New Vegas.
+                            Since then, I've continued learning all software has to teach with the same curiosity that initially roped me in.
+                        </p>
+                    </div>
+                    <div className='paragraph'>
+                        <p>
+                            Currently, I'm designing, developing, and testing safety-critical software at a 
+                            <HyperLink type={LinkType.External} to='https://www.lockheedmartin.com/en-us/who-we-are.html'> world-renowned Aerospace and Defense corporation.</HyperLink>
+                        </p>
+                    </div>
+                    <div className='paragraph'>
+                        <p>
+                            When I'm not working, I can usually be found hacking away at the mountain of 
+                            <HyperLink type={LinkType.Internal} to='/#projects' > personal projects</HyperLink> I've started, playing video games, 
+                            re-watching the same 10 movies/tv shows I always watch, or refilling my cup of coffee.
+                        </p>
+                    </div>
+                    <div id='Interests'>
+                        <div className='subtitle'>
+                            <p>Current Interests:</p>
+                        </div>
 
-                    <div className='paragraph '>
-                        <p className='indent italic'> application development (full-stack), artificial intelligence, information assurance</p>
+                        <div className='paragraph '>
+                            <p className='indent italic'> application development (full-stack), artificial intelligence, information assurance</p>
+                        </div>
                     </div>
                 </div>
             </TextContainer>
 
-            <TextContainer id='Experience' >
-                <p className='title'> Professional Experience</p>
-                <div className='list'>
-                    <p className='date'> 2022 - 2023</p>
-                    <div className='desc'> <p>Software Engineer Intern @ Lockheed Martin. Duties included:</p>
-                        <ul className='sublist'> 
-                            <li> designing and implementing software for safety-critical systems </li>
-                            <li> testing software using simulation environments </li>
-                            <li> generating software artifacts for requirement verification</li>
-                            <li> collaborating with internal groups to develop complete systems </li>
-                            <li> communicating tasks, challenges, and progress to stakeholders on a regular basis</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div className='paragraph italic'>
-                    <p>* Check out my <HyperLink type={LinkType.Internal} to='/projects'> 
-                    projects page </HyperLink> for what I've been doing in the meantime. </p>
-                </div>
 
+            <TextContainer id='Skills'>
+                <div>
+                    <button onClick={(e) => handleSendEmail(e)}> Send Test Email</button>
+                </div>
             </TextContainer>
 
         </div>

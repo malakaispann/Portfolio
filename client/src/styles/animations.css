@@ -72,7 +72,7 @@
     }
 }
 
-/* Introduction Animations */
+/* Opening Animations */
 @keyframes wave {
     0%, 100% {
         transform: rotate(0deg);

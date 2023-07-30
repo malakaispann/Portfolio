@@ -11,15 +11,14 @@ type Props = {
 }
 
 enum Mode{
-    Light,
-    Dark,
+    Light ,
+    Dark ,
 }
 
 export const ThemeContextProvider = ({ children }: Props) => {
 
     // get user theme preference.
     let dark_pref = window.matchMedia('(prefers-color-scheme: dark)') ;
-
     const [theme, setTheme] = useState(dark_pref.matches ? Mode.Dark : Mode.Light) ;
 
 
@@ -30,29 +29,29 @@ export const ThemeContextProvider = ({ children }: Props) => {
     const toggleTheme = () => {
         
         setTheme(() => {
-            return theme === Mode.Light ? Mode.Dark : Mode.Light ;
+            let newTheme = theme === Mode.Light ? Mode.Dark : Mode.Light ;
+
+            setBackground(newTheme) ;
+            return newTheme ;
         })
-        setBackground() ;
     }
     
-    const setBackground = () => {
-        let body = document.body ;
+    const setBackground = (newTheme:Mode) => {
 
-        if (theme === Mode.Light){
-            body.classList.remove('dark') ;
+        if (newTheme === Mode.Light){
+            document.body.style["background"] = "#FFFFFF" ;
         } else {
-            body.classList.add('dark') ;
+            document.body.style["background"] = "#222222" ;
         }
     }
 
-    setBackground() ;
-
+    setBackground(theme) ;
 
     return (
         <ThemeContext.Provider value={{ theme,
             setTheme,
             toggleTheme,
-            getTheme, }}> {children} </ThemeContext.Provider>
+            getTheme }}> {children} </ThemeContext.Provider>
     ) 
 }
 
