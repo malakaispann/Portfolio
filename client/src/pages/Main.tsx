@@ -3,16 +3,9 @@ import TextContainer from './components/small/TextContainer' ;
 import HyperLink from './components/small/HyperLink' ;
 import { LinkType } from '../common/types' ;
 import SocialFeed from './components/small/SocialFeed' ;
-import sendEmail from '../../backend/mailer'
 
 
 const Main = () =>  {
-
-    const handleSendEmail = (e:React.MouseEvent) => {
-        e.preventDefault() ;
-
-        sendEmail() ;
-    }
 
     // update 'current'/active section hyperlink styling
     useEffect( () => {
@@ -188,9 +181,7 @@ const Main = () =>  {
 
 
             <TextContainer id='Skills'>
-                <div>
-                    <button onClick={(e) => handleSendEmail(e)}> Send Test Email</button>
-                </div>
+
             </TextContainer>
 
         </div>

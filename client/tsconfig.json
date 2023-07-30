@@ -21,6 +21,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "client/public",
-    "src", "src/index.tsx", "backend" ]
+    "public",
+    "src", "src/index.tsx",]
 }
