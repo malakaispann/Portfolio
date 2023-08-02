@@ -4,6 +4,25 @@ import HyperLink from './components/small/HyperLink' ;
 import { LinkType } from '../common/types' ;
 import SocialFeed from './components/small/SocialFeed' ;
 
+// Images
+import { ReactComponent as BashLogo } from '../assets/logos/bash-icon.svg' ;
+import { ReactComponent as CppLogo } from '../assets/logos/cpp-icon.svg' ;
+import { ReactComponent as CSSLogo } from '../assets/logos/css-icon.svg' ;
+import { ReactComponent as GolangLogo } from '../assets/logos/golang-icon.svg' ;
+import { ReactComponent as HTMLLogo } from '../assets/logos/html-icon.svg' ;
+import { ReactComponent as JavaLogo } from '../assets/logos/java-icon.svg' ;
+import { ReactComponent as JSLogo } from '../assets/logos/javascript-icon.svg' ;
+import { ReactComponent as PythonLogo } from '../assets/logos/python-icon.svg' ;
+import { ReactComponent as RustLogo } from '../assets/logos/rust-icon.svg' ;
+import { ReactComponent as TSLogo } from '../assets/logos/typescript-icon.svg' ;
+
+import { ReactComponent as DockerLogo } from '../assets/logos/docker-icon.svg' ;
+import { ReactComponent as FlaskLogo } from '../assets/logos/flask-icon.svg' ;
+import { ReactComponent as GitLogo } from '../assets/logos/git-icon.svg' ;
+import { ReactComponent as NodeJsLogo } from '../assets/logos/nodejs-icon.svg' ;
+import { ReactComponent as SassLogo } from '../assets/logos/sass-icon.svg' ;
+import { ReactComponent as ReactLogo } from '../assets/logos/react-icon.svg' ;
+import { ReactComponent as TailwindLogo } from '../assets/logos/tailwind-icon.svg' ;
 
 const Main = () =>  {
 
@@ -41,7 +60,7 @@ const Main = () =>  {
 
         } ;
 
-        let sections = [ 'Opening', 'About' , 'Skills'] ;
+        let sections = [ 'Opening', 'About' , 'Projects'] ;
         let styleIO = new IntersectionObserver(highlightHyperlink, { threshold : .5 }) ;
 
 
@@ -75,7 +94,7 @@ const Main = () =>  {
 
         }
 
-        let sections = ['Opening', 'About', 'Skills'] ;
+        let sections = ['Opening', 'About', 'Projects'] ;
         let animationIO = new IntersectionObserver(runLoadAnimation, { threshold : .3 })
 
         sections.forEach ( section => {
@@ -170,9 +189,103 @@ const Main = () =>  {
                         <div className='subtitle'>
                             <p>Current Interests:</p>
                         </div>
-
-                        <div className='paragraph '>
+                        <div className='paragraph'>
                             <p className='indent italic'> application development (full-stack), artificial intelligence, information assurance</p>
+                        </div>
+                        <div className='paragraph'>
+                            <p> Some of the (pseudo-) programming languages I've worked with:</p>
+                            <ul>
+                                <li>
+                                    <CppLogo/>
+                                    C++
+                                </li>
+                                
+                                <li>
+                                    <RustLogo />
+                                    Rust
+                                </li>
+
+                                <li> 
+                                    <PythonLogo/> 
+                                    Python
+                                </li>
+
+                                <li>
+                                    <JavaLogo/>
+                                    Java
+                                </li>
+
+                                <li>
+                                    <HTMLLogo/>
+                                    HTML
+                                </li>
+
+                                <li>
+                                    <CSSLogo />
+                                    CSS
+                                </li>
+
+                                <li>
+                                    <JSLogo/>
+                                    JavaScript
+                                </li>
+
+                                <li>
+                                    <TSLogo/>
+                                    TypeScript
+                                </li>
+
+                                <li>
+                                    <GolangLogo />
+                                    Go
+                                </li>
+
+                                <li>
+                                    <BashLogo />
+                                    Bash
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className='paragraph'>
+                            <p> Some of the frameworks/other tech I enjoy using:</p>
+                            <ul>
+                                <li>
+                                    <GitLogo/>
+                                    Github/lab
+                                </li>
+
+
+                                <li>
+                                    <DockerLogo/>
+                                    Docker
+                                </li>
+
+                                <li>
+                                    <FlaskLogo />
+                                    Flask
+                                </li>
+
+                                <li>
+                                    <NodeJsLogo />
+                                    NodeJS
+                                </li>
+                                 
+                                <li>
+                                    <ReactLogo/>
+                                    React ( + Native)
+                                </li>
+
+                                <li>
+                                    <SassLogo />
+                                    Sass
+                                </li>
+
+                                <li>
+                                    <TailwindLogo />
+                                    Tailwind
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -180,9 +293,10 @@ const Main = () =>  {
 
 
 
-            <TextContainer id='Skills'>
+            <TextContainer id='Projects'>
 
             </TextContainer>
+
 
         </div>
     )

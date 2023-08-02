@@ -74,6 +74,28 @@
     text-indent: 1rem;
 }
 
+.text .paragraph ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    max-width: 100%;
+
+    > li {
+        display: flex;
+        align-items: center;
+        padding: .25rem 1rem;
+        border: solid rgba(var(--main), .5) 2px; 
+        border-radius: 1rem;
+        margin: .5rem .5rem 0 0;
+
+        > svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: .5rem;
+        }
+    }
+}
+
 .list .date {
     text-align: left;
     font-style: italic;
@@ -93,14 +115,6 @@
     font-size: clamp(14px, 1vw ,1rem);
     line-height: 1.5rem;
 }
-
-.list .sublist {
-    max-width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 0 1rem 0 2rem;
-}
-
 
 @media only screen and (max-width:640px) {
     
