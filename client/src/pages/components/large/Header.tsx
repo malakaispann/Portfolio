@@ -27,7 +27,7 @@ const Header = () => {
         // mobile
         document.body.style.touchAction = enable ? 'auto' : 'none';
         // desktop
-        document.body.style.overflow = enable ? 'scroll' : 'hidden';
+        document.body.style.overflow = enable ? '' : 'hidden';
     }
 
     const handleMenuToggle = () => {
