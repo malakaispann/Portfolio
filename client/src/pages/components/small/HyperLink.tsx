@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { LinkType } from '../../../common/types'
-import { HashLink as Link } from 'react-router-hash-link' ;
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 /**
@@ -26,17 +26,17 @@ type Props = {
 const HyperLink = ({ type, to, children, extra_styles, extra_function }: Props) => {
     
 
-    let id = type === LinkType.Internal ? `${to.slice(2)}Link` : undefined ;
+    let id = type === LinkType.Internal ? `${to.slice(2)}Link` : undefined;
 
     
     return type === LinkType.Internal ?
         (
-            <Link to={`${to}`} className={`hyperlink ${extra_styles === undefined ? '' : extra_styles}`} onClick={() => extra_function? extra_function() : undefined} id={id}>
+            <Link to={`${to}`} className={`hyperlink ${extra_styles ?? ''}`} onClick={() => extra_function? extra_function() : undefined} id={id}>
                 {children}
             </Link>
         ) : 
         (
-            <a href={`${to}`} className={`hyperlink ${extra_styles === undefined ? '' : extra_styles}`}>
+            <a href={`${to}`} className={`hyperlink ${extra_styles ?? ''}`}>
                 {children}
             </a>
         )

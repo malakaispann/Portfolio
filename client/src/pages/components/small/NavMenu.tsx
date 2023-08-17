@@ -1,4 +1,4 @@
-import { memo } from 'react' ;
+import { memo } from 'react';
 import { LinkType } from '../../../common/types'
 import HyperLink from './HyperLink'
 
@@ -13,11 +13,14 @@ const NavMenu = ({ menuTrigger, extra_function  }: Props) => {
         <div className='nav'>
             <div className={`content ${menuTrigger ? 'display' : ''}`}>
                 
-                <HyperLink type={LinkType.Internal} to='/#About' extra_styles='active' extra_function={extra_function? extra_function: undefined}>
+                <HyperLink type={LinkType.Internal} to='/#about' extra_styles='active' extra_function={extra_function?? undefined}>
                     About Me
                 </HyperLink>
-                <HyperLink type={LinkType.Internal} to='/#Projects' extra_function={extra_function? extra_function: undefined}>
+                <HyperLink type={LinkType.Internal} to='/#projects' extra_function={extra_function?? undefined}>
                     Projects
+                </HyperLink>
+                <HyperLink type={LinkType.Internal} to='/#contact' extra_function={extra_function?? undefined}>
+                    Contact
                 </HyperLink>
             </div>
 
@@ -25,4 +28,4 @@ const NavMenu = ({ menuTrigger, extra_function  }: Props) => {
     )
 }
 
-export default memo(NavMenu) ;
+export default memo(NavMenu);

@@ -1,5 +1,5 @@
 import { useState, memo } from 'react'
-import { useThemeContext } from '../../../common/contexts/ThemeContext' ;
+import { useThemeContext } from '../../../common/contexts/ThemeContext';
 
 
 /**
@@ -7,24 +7,24 @@ import { useThemeContext } from '../../../common/contexts/ThemeContext' ;
  */
 
 const ThemeSwitcher = () => {
-    const { getTheme, toggleTheme } = useThemeContext() ;
-    const [pushed, setPushed] = useState(false) ;
+    const { getTheme, toggleTheme } = useThemeContext();
+    const [pushed, setPushed] = useState(false);
     
     let handleThemeChange = () => {
         setPushed(prevState => {
             return true
-        }) ;
+        });
     }
     
     return (
-        <div className='theme-switch outer' onClick={() => { handleThemeChange() ; toggleTheme() ; }} id='Theme-Switch'>
+        <div className='theme-switch outer' onClick={() => { handleThemeChange(); toggleTheme(); }} id='Theme-Switch'>
             <div className='inner'>
-                <div className={` sun graphic small ${getTheme() === 'light' ? 'invert' : ''}`}/>
-                <div className={` moon graphic small ${getTheme() === 'light' ? 'invert' : ''}`} />
+                <div className={` sun graphic x-small ${getTheme() === 'light' ? 'invert' : ''}`}/>
+                <div className={` moon graphic x-small ${getTheme() === 'light' ? 'invert' : ''}`} />
             </div>
             <div className={`selector ${pushed ? 'slide' : ''}`} />
         </div>
     )
 }
 
-export default memo(ThemeSwitcher) ;
+export default memo(ThemeSwitcher);

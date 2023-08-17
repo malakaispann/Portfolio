@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useState } from 'react' ;
+import React, { createContext, useContext, useState } from 'react';
 
 
 /**
  *   @details : Creates a sharable state across the entire app to control the current theme.
  */
-export const ThemeContext = createContext<any>(null) ;
+export const ThemeContext = createContext<any>(null);
 
 type Props = {
     children?: React.ReactNode, 
@@ -18,8 +18,8 @@ enum Mode{
 export const ThemeContextProvider = ({ children }: Props) => {
 
     // get user theme preference.
-    let dark_pref = window.matchMedia('(prefers-color-scheme: dark)') ;
-    const [theme, setTheme] = useState(dark_pref.matches ? Mode.Dark : Mode.Light) ;
+    let dark_pref = window.matchMedia('(prefers-color-scheme: dark)');
+    const [theme, setTheme] = useState(dark_pref.matches ? Mode.Dark : Mode.Light);
 
 
     const getTheme = () => {
@@ -29,23 +29,23 @@ export const ThemeContextProvider = ({ children }: Props) => {
     const toggleTheme = () => {
         
         setTheme(() => {
-            let newTheme = theme === Mode.Light ? Mode.Dark : Mode.Light ;
+            let newTheme = theme === Mode.Light ? Mode.Dark : Mode.Light;
 
-            setBackground(newTheme) ;
-            return newTheme ;
+            setBackground(newTheme);
+            return newTheme;
         })
     }
     
     const setBackground = (newTheme:Mode) => {
 
         if (newTheme === Mode.Light){
-            document.body.style["background"] = "#FFFFFF" ;
+            document.body.style['background'] = '#FFFFFF';
         } else {
-            document.body.style["background"] = "#222222" ;
+            document.body.style['background'] = '#222222';
         }
     }
 
-    setBackground(theme) ;
+    setBackground(theme);
 
     return (
         <ThemeContext.Provider value={{ theme,
@@ -55,4 +55,4 @@ export const ThemeContextProvider = ({ children }: Props) => {
     ) 
 }
 
-export const useThemeContext = () => useContext(ThemeContext) ;
+export const useThemeContext = () => useContext(ThemeContext);

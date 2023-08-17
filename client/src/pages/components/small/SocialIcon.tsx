@@ -1,6 +1,6 @@
-import { useState, memo } from 'react' ;
-import Graphic from './Graphic' ;
-import { Size } from '../../../common/types' ;
+import { useState, memo } from 'react';
+import Graphic from './Graphic';
+import { Size } from '../../../common/types';
 
 
 type Props = {
@@ -12,25 +12,25 @@ type Props = {
 }
 const SocialIcon = ({ link, link_text, graphic_desc, graphic_src, keep_invert } : Props) => {
 
-    const [isHover, setHover] = useState(false) ;
+    const [isHover, setHover] = useState(false);
 
     const handleHover = () => {
-        setHover(true) ;
+        setHover(true);
     }
 
     const handleNotHover = (e: React.MouseEvent) => {
 
-        let target: HTMLElement = e.target as HTMLElement ;
+        let target: HTMLElement = e.target as HTMLElement;
 
-        target.classList.add('bounce') ;
+        target.classList.add('bounce');
 
-        setHover(false) ;
+        setHover(false);
     }
 
     return (
         <div className='enclosed ' onMouseOver={handleHover}  onMouseLeave={e => handleNotHover(e)}>
             <a href={link} >
-                <Graphic size={Size.Medium} graphic_src={graphic_src} desc={graphic_desc} extra_styles={keep_invert? 'keep-invert' : ''}/>
+                <Graphic size={Size.Small} graphic_src={graphic_src} desc={graphic_desc} extra_styles={keep_invert? 'keep-invert' : ''}/>
             </a>
             { isHover ?
                 <p className='text-bubble'>{link_text}</p>
@@ -41,4 +41,4 @@ const SocialIcon = ({ link, link_text, graphic_desc, graphic_src, keep_invert } 
 
 }
 
-export default memo(SocialIcon) ;
+export default memo(SocialIcon);

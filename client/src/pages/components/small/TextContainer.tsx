@@ -1,4 +1,4 @@
-import { memo } from 'react' ;
+import { memo } from 'react';
 
 /**
  *   @details : Creates a flexible container for text (and other content). 
@@ -19,7 +19,7 @@ type Props = {
 
 const TextContainer = ({ id, children, extra_styles }: Props) => {
     return (
-        <div className={`textbox-container text ${extra_styles === undefined ? '' : extra_styles}`} id={id? id : ''}>
+        <div className={`textbox-container text ${extra_styles ?? ''}`} id={id?? ''}>
             {children}
         </div>
     )

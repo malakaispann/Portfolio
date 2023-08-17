@@ -35,13 +35,6 @@
         "warn",
         "always"
       ],
-      "semi-spacing": [
-        "warn",
-        {
-          "before": true,
-          "after": true
-        }
-      ],
       "arrow-spacing": [
         "warn",
         {

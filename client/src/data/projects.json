@@ -1,0 +1,43 @@
+[
+    {
+        "id"        : 0,
+        "title"     : "Traveling Salesman Problem w/ AI",
+        "main_link" : "https://github.com/KayDVC/Traveling-Salesman-Problem-P2",
+        "type"      : "featured",
+        "img"       : "/other/destination.png",
+        "img_desc"  : "A car traveling from one point to another.",
+        "proj_desc" : "A solution to the classic Traveling Salesman Problem using the Ant Swarm Optimization Algorithm. Includes in-depth analysis of design and test runs.",
+        "tech"      : ["Python, Jupyter"]
+    },
+    {
+        "id"        : 1,
+        "title"     : "Activity Calendar",
+        "main_link" : "https://github.com/KayDVC/Activity-Calendar",
+        "type"      : "featured",
+        "img"       : "/other/calendar.png",
+        "img_desc"  : "A calendar with multiple dates.",
+        "proj_desc" : "A database-like application that features commanding for data insertion, lookup, and visualization.",
+        "tech"      : ["Java"]
+    },
+    {
+        "id"        : 2,
+        "title"     : "AirKeys",
+        "main_link" : "https://github.com/HelloWorldSeniorProject/AirKeys",
+        "type"      : "featured",
+        "img"       : "/other/keyboard.png",
+        "img_desc"  : "A keyboard transmitting data.",
+        "proj_desc" : "A proof-of-concept, projection-based virtual keyboard utilizing Computer Vision to detect and transmit user input to multiple devices. In progress.",
+        "tech"      : ["Python", "Bash", "PyTest", "Docker", "DevContainers", "Git Actions", "Sphinx"]
+    },
+    {
+        "id"        : 3,
+        "title"     : "My Portfolio Website",
+        "main_link" : "https://github.com/KayDVC/Portfolio",
+        "type"      : "extra",
+        "img"       : "/other/portfolio.png",
+        "img_desc"  : "A calendar with multiple dates.",
+        "proj_desc" : "A database-like application that features commanding for data insertion, lookup, and visualization.",
+        "tech"      : ["React", "TypeScript", "HTML", "CSS", "Vercel"]
+    }
+
+]
