@@ -1,7 +1,6 @@
-import { useEffect, useState, memo } from 'react'
+import { useEffect, useState } from 'react'
 import NavMenu from '../small/NavMenu';
 import ThemeSwitcher from '../small/ThemeSwitcher';
-import ScrollLock from '../small/ScrollLock';
 
 
 const Header = () => {
@@ -26,6 +25,12 @@ const Header = () => {
 
     const handleMenuToggle = () => {
         setMenuTrigger(!menuTrigger);
+
+        if (!menuTrigger){
+            document.body.style.touchAction = 'none';
+        } else {
+            document.body.style.touchAction = 'auto';
+        }
 
         blurBackground(!menuTrigger);
     }
@@ -91,7 +96,7 @@ const Header = () => {
         <div className={`header outer ${toggle? 'show' : toggle!== null ? 'hide' : ''}`} id='Header'>
             <div className='inner'>
                 < div className='general-flex parent-height'>
-                    <NavMenu menuTrigger={menuTrigger} extra_function={() => { blurBackground(false); setMenuTrigger(false); }}/>
+                    <NavMenu menuTrigger={menuTrigger} extra_function={() => { blurBackground(false); setMenuTrigger(false); document.body.style.touchAction = 'auto'; }}/>
                     <div className='general-flex' id='Interactables'>
                         <ThemeSwitcher />
                         <div className='menu toggle' onClick={() => { handleClick(); handleMenuToggle();  }}> 
@@ -103,7 +108,6 @@ const Header = () => {
                                     :
                                     <div className='parent-height'>
                                         <div className={`x-mark graphic small invert ${clicked? 'rotateLeft' : 'straight'}`} onAnimationEnd={handleClick} />
-                                        <ScrollLock />
                                     </div>
                             }
                         </div>
@@ -115,4 +119,4 @@ const Header = () => {
     )
 }
 
-export default memo(Header);
+export default Header;
