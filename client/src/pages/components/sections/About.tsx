@@ -21,8 +21,8 @@ const About = () => {
                     </p>
                     <div className='paragraph'>
                         <p>
-                            Currently, I'm designing, developing, and testing safety-critical software at a <HyperLink type={LinkType.External} 
-                                to='https://www.lockheedmartin.com/en-us/who-we-are.html'>world-renowned Aerospace and Defense corporation.</HyperLink>
+                            Currently, I'm designing, developing, and testing safety-critical software at a world-renowned <HyperLink type={LinkType.External} 
+                                to='https://www.lockheedmartin.com/en-us/who-we-are.html'>Aerospace and Defense corporation.</HyperLink>
                         </p>
                     </div>
                     <div className='paragraph'>

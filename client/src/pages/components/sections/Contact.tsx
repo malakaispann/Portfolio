@@ -17,9 +17,9 @@ const Contact = () => {
                 <div className='info-container'>
                     <div className='contact-info'>
                         <div className='container'>
-                            <div className='general-flex'>
+                            <a href='mailto:MalakaiSpann@gmail.com' className='general-flex'>
                                 <Graphic size={Size.Medium} graphic_src='/logos/gmail.png' desc='Email' disable_inversion={true}/>
-                            </div>
+                            </a>
                             <div className='text'>
                                 <p className='subtitle'> Email </p>
                                 <HyperLink to='mailto:MalakaiSpann@gmail.com' type={LinkType.External}> MalakaiSpann@gmail.com</HyperLink>   
@@ -29,9 +29,9 @@ const Contact = () => {
 
                     <div className='contact-info'>
                         <div className='container'>
-                            <div className='general-flex'>
+                            <a href='https://linkedin.com/in/malakaispann' className='general-flex'>
                                 <Graphic size={Size.Medium} graphic_src='/logos/in-blue.png' desc='Email' disable_inversion={true}/>
-                            </div>
+                            </a>
                             <div className='text'>
                                 <p className='subtitle'> LinkedIn </p>
                                 <HyperLink to='https://linkedin.com/in/malakaispann' type={LinkType.External}> Malakai Spann</HyperLink>   

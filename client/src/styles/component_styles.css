@@ -78,6 +78,7 @@
 @media only screen and (min-width:640px) {
     .page-spacer {
         scroll-snap-align: start;
+        padding-top: var(--header-height);
     }
 }
 
@@ -266,23 +267,20 @@
 
 .text .hyperlink,
 .footer .hyperlink {
-    height: auto;
-    width: auto;
-    min-width: 0;
     font-size: inherit;
-    display: inline-block;
+    display: inline;
     color: rgb(var(--main));
+    background-image: linear-gradient(rgb(var(--main)), rgb(var(--main)));
+    background-size: 0% 1px;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background 0.2s linear;
     padding: 0;
 }
 
-.text .hyperlink::after,
-.footer .hyperlink::after {
-    display: block;
-    content: '';
-    width: 0px;
-    height: 1px;
-    background: rgb(var(--main));
-    transition: .3s;
+.text .hyperlink:hover,
+.footer .hyperlink:hover {
+    background-size: 100% 1px;
 }
 
 .text .hyperlink:hover::after,
