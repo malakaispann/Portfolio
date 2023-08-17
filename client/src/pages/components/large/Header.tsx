@@ -23,14 +23,17 @@ const Header = () => {
         }
     }
 
+    const enableScroll = (enable:boolean) => {
+        // mobile
+        document.body.style.touchAction = enable ? 'auto' : 'none';
+        // desktop
+        document.body.style.overflow = enable ? 'scroll' : 'hidden';
+    }
+
     const handleMenuToggle = () => {
         setMenuTrigger(!menuTrigger);
 
-        if (!menuTrigger){
-            document.body.style.touchAction = 'none';
-        } else {
-            document.body.style.touchAction = 'auto';
-        }
+        enableScroll(menuTrigger);
 
         blurBackground(!menuTrigger);
     }
@@ -48,6 +51,7 @@ const Header = () => {
             if (lastWidth <= threshold){
                 // revert menu toggle and background blur to default values.
                 if ( currWidth !== undefined && currWidth > threshold){
+                    enableScroll(true);
                     blurBackground(false);
                     setMenuTrigger(false);
                 }
@@ -96,7 +100,7 @@ const Header = () => {
         <div className={`header outer ${toggle? 'show' : toggle!== null ? 'hide' : ''}`} id='Header'>
             <div className='inner'>
                 < div className='general-flex parent-height'>
-                    <NavMenu menuTrigger={menuTrigger} extra_function={() => { blurBackground(false); setMenuTrigger(false); document.body.style.touchAction = 'auto'; }}/>
+                    <NavMenu menuTrigger={menuTrigger} extra_function={() => { blurBackground(false); setMenuTrigger(false); enableScroll(true); }}/>
                     <div className='general-flex' id='Interactables'>
                         <ThemeSwitcher />
                         <div className='menu toggle' onClick={() => { handleClick(); handleMenuToggle();  }}> 
