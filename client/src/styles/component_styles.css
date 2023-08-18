@@ -70,6 +70,7 @@
     min-width: 100%;
     width: 100%;
     min-height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -162,8 +163,8 @@
     width: clamp(200px, 30vw , 250px);
 }
 .graphic.medium {
-    height: clamp(40px, 7vw, 60px);
-    width: clamp(40px, 7vw, 60px);
+    height: clamp(40px, 7vw, 55px);
+    width: clamp(40px, 7vw, 55px);
 }
 .graphic.small {
     height: clamp(25px, 4vw , 30px);
@@ -303,22 +304,11 @@
     height: 100%;
     align-items: center;
     justify-content: flex-end;
-}
 
-.nav .hyperlink{
-    font-size : clamp(16px, 1.6vw ,1.2rem);
-    opacity: .6;
-}
-
-.nav .hyperlink:hover{
-    border-radius: 0 0 10px 10px;
-    opacity: 1;
-    background-color: rgba(var(--main), .5);
-}
-
-.nav .hyperlink.active{
-    text-underline-offset: 6px;
-    text-decoration: underline rgb(var(--main)) .1rem;
+    .hyperlink-container {
+        height: 100%;
+        display: flex;
+    }
 }
 
 .nav .socials{
@@ -357,6 +347,7 @@
         display: none;
         width: 0;
         height: 0;
+
     }
 
     .nav .content.display{
@@ -367,20 +358,17 @@
         display:flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         background-color: rgb(var(--bg));
-    }
 
-    .nav .hyperlink{
-        font-size : clamp(20px, 2vw ,1.5rem);
-        height: fit-content;
-        padding: 2rem;
-        opacity: 1;
-    }
-    .nav .hyperlink:hover {
-        border-radius: 0;
-        opacity: 1;
-        background-color: rgb(var(--bg));
+        .hyperlink-container {
+            position: relative;
+            top: -3rem;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
     }
 
     .menu.toggle{

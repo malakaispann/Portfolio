@@ -11,25 +11,27 @@ type Props = {
 }
 
 enum Mode{
-    Light ,
-    Dark ,
+    Light = 'light',
+    Dark = 'dark' ,
 }
 
 export const ThemeContextProvider = ({ children }: Props) => {
 
     // get user theme preference.
-    let dark_pref = window.matchMedia('(prefers-color-scheme: dark)');
-    const [theme, setTheme] = useState(dark_pref.matches ? Mode.Dark : Mode.Light);
+    let theme_pref = (localStorage.getItem("lastTheme") as Mode);
+    theme_pref = theme_pref === undefined ? window.matchMedia('(prefers-color-scheme: dark)').matches? Mode.Dark : Mode.Light : theme_pref;
+    const [theme, setTheme] = useState(theme_pref);
 
 
     const getTheme = () => {
-        return theme===Mode.Light ? 'light' : 'dark'
+        return theme;
     }
 
     const toggleTheme = () => {
         
         setTheme(() => {
             let newTheme = theme === Mode.Light ? Mode.Dark : Mode.Light;
+            localStorage.setItem("lastTheme", newTheme)
 
             setBackground(newTheme);
             return newTheme;

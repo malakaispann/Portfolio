@@ -31,11 +31,13 @@ const Header = () => {
     }
 
     const handleMenuToggle = () => {
-        setMenuTrigger(!menuTrigger);
+        
 
         enableScroll(menuTrigger);
 
         blurBackground(!menuTrigger);
+
+        setMenuTrigger(!menuTrigger);
     }
 
     // revert any changes if screen size is changed from mobile to 'large' (screen width >640px).
@@ -100,7 +102,7 @@ const Header = () => {
         <div className={`header outer ${toggle? 'show' : toggle!== null ? 'hide' : ''}`} id='Header'>
             <div className='inner'>
                 < div className='general-flex parent-height'>
-                    <NavMenu menuTrigger={menuTrigger} extra_function={() => { blurBackground(false); setMenuTrigger(false); enableScroll(true); }}/>
+                    <NavMenu menuTrigger={menuTrigger} extra_function={handleMenuToggle}/>
                     <div className='general-flex' id='Interactables'>
                         <ThemeSwitcher />
                         <div className='menu toggle' onClick={() => { handleClick(); handleMenuToggle();  }}> 

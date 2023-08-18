@@ -1,12 +1,6 @@
 /* 
     Misc Styling
 */
-.logocard {
-    display : flex;
-    align-items: center;
-    height: 100%;
-    border-radius: 20%;
-}
 
 .straight{
     transform: rotate(0deg);
@@ -16,6 +10,42 @@
     transform: rotate(45deg);
 }
 
+/* Nav Styling */
+
+.nav .hyperlink{
+    font-size : clamp(16px, 1.6vw ,1.2rem);
+    opacity: .6;
+
+    .section-number {
+        color: rgb(var(--main));
+    }
+}
+
+.nav .hyperlink:hover{
+    border-radius: 0 0 10px 10px;
+    opacity: 1;
+    background-color: rgba(var(--main), .5);
+}
+
+.nav .hyperlink.active{
+    text-underline-offset: 6px;
+    text-decoration: underline rgb(var(--main)) .1rem;
+}
+
+@media only screen and (max-width: 640px) {
+    .nav .hyperlink{
+        font-size : clamp(16px, 1.6vw ,1.2rem);
+        height: fit-content;
+        padding: 2rem;
+        opacity: 1;
+    }
+    .nav .hyperlink:hover {
+        border-radius: 0;
+        opacity: 1;
+        background-color: rgb(var(--bg));
+    }
+    
+}
 
 /* 
     Text Styling
@@ -153,20 +183,19 @@
 
     --wave-iterations: 10;
 
-    
     .hand-wave {
         transform-origin:  center 70%;
         margin: 0 .1rem;
         display: inline-block;
     }
     .socials {
-        margin-top: 2rem;
+        margin-top: 3rem;
         padding: 0 3rem;
         justify-content: space-around;
     }
     .subtitle {
         font-size: clamp(16px , 1.4vw, 1.2rem);
-        margin-bottom: .2rem;
+        margin-bottom: .3rem;
     }
 
     #Greeting{
@@ -189,6 +218,7 @@
     #Introduction{
         display: block;
         margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -290,12 +320,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-bottom: calc(var(--footer-height) + 1rem);
 
         .paragraph, .title {
             text-indent: 0;
             text-align: center;
             width: auto;
-            margin-bottom: 1rem;
         }
 
         .title {
@@ -307,10 +337,11 @@
     .info-container {
         display: flex;
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
+
     .contact-info{
-        margin: 1rem 0;
+        margin: .5rem 0;
         padding: 1rem 0;
 
         .container {
@@ -327,6 +358,28 @@
         }
         .paragraph {
             margin-bottom: 0;
+        }
+    }
+
+    .resume-container {
+        display: flex;
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .resume-link {
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: rgb(var(--main));
+            border: 1px solid rgb(var(--main));
+            border-radius: 10px;
+        }
+
+        .resume-link:hover {
+            background-color: rgb(var(--main));
+            color: rgb(var(--text));
         }
     }
 }
@@ -362,6 +415,11 @@
 
     #opening {
         flex-direction: column;
+
+        .textbox-container {
+            position: relative;
+            top: -5rem;
+        }
 
         .hand-wave {
             margin: 0 .1rem;

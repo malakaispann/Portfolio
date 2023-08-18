@@ -40,6 +40,14 @@ const Contact = () => {
                     </div>
                 </div>
 
+                <div className='resume-container'>
+                    <p className='subtitle'>
+                        Want this in PDF-Format? <br/> &darr;
+                    </p>
+                    
+                    <a className='resume-link' href={process.env.PUBLIC_URL + '/Resume.pdf'}> Resume </a>
+                </div>
+
             </TextContainer>
             <Footer />
         </div>
