@@ -19,7 +19,7 @@ export const ThemeContextProvider = ({ children }: Props) => {
 
     // get user theme preference.
     let theme_pref = (localStorage.getItem("lastTheme") as Mode);
-    theme_pref = theme_pref === undefined ? window.matchMedia('(prefers-color-scheme: dark)').matches? Mode.Dark : Mode.Light : theme_pref;
+    theme_pref = theme_pref === null ? window.matchMedia('(prefers-color-scheme: dark)').matches? Mode.Dark : Mode.Light : theme_pref;
     const [theme, setTheme] = useState(theme_pref);
 
 
