@@ -78,7 +78,7 @@ const Skills = () => {
             </div>
 
             <div className='paragraph skills'>
-                <p> Some of the frameworks/other tech I enjoy using:</p>
+                <p> Some of the frameworks and tools I enjoy using:</p>
                 <ul>
                     <li>
                         <GitLogo/>
