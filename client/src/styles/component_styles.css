@@ -307,7 +307,7 @@
 
     .hyperlink-container {
         display: flex;
-        height: 100%;
+        height: var(--header-height);
     }
 }
 

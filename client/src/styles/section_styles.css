@@ -40,7 +40,7 @@
         padding: 2rem;
         opacity: 1;
     }
-    .nav .hyperlink-container:hover {
+    .nav .hyperlink:hover {
         border-radius: 0;
         opacity: 1;
         background-color: rgb(var(--bg));
