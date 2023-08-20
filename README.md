@@ -61,6 +61,8 @@ Friendly reminder: don't be a weirdo who steals source code. Even when credited,
 
 Any major changes other than the one(s) above won't be happening in this site. I might create a new version though.
 
+See my [personal thoughts and takeaways](./Final_Thoughts.md) from this project.
+
 Thanks, 
 
 \- Kay
