@@ -1,6 +1,8 @@
 _This file only contains my personal thoughts on the project. See [Read Me](/README.md) for technical info._
 
-This project was a blast – it was frustrating, difficult, and time consuming, but a blast nonetheless.
+This project was one of the most challenging projects I've ever taken on. I'll remember the things I learned for the rest of my career.
+
+--- 
 
 Being that was the second full web app I've developed, I really wanted to take the time to learn as much as I could about web design; the do's, the don'ts, and the in-betweens. Chances are, you can probably tell if you've looked around enough.
 
