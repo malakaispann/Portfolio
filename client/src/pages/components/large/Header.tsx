@@ -102,7 +102,7 @@ const Header = () => {
         <div className={`header outer ${toggle? 'show' : toggle!== null ? 'hide' : ''}`} id='Header'>
             <div className='inner'>
                 < div className='general-flex parent-height'>
-                    <NavMenu menuTrigger={menuTrigger} extra_function={handleMenuToggle}/>
+                    <NavMenu menuTrigger={menuTrigger} extra_function={ () => { enableScroll(true); blurBackground(false); setMenuTrigger(false); }}/>
                     <div className='general-flex' id='Interactables'>
                         <ThemeSwitcher />
                         <div className='menu toggle' onClick={() => { handleClick(); handleMenuToggle();  }}> 
