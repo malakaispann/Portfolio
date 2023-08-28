@@ -149,7 +149,7 @@
     line-height: 1.5rem;
 }
 
-@media only screen and (max-width:640px) {
+@media only screen and (max-width: 640px){
     
     .text .date {
         float: none;
@@ -385,7 +385,7 @@
     }
 }
 
-@media only screen and (min-width: 641px){
+@media only screen and (min-width: 641px) and (orientation: portrait){
     .project-container .img-desc-container{
         min-height: clamp(200px, 30vw, 250px);
     }
