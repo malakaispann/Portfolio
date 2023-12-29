@@ -17,6 +17,7 @@ const Projects = () => {
         'img_desc'  : string;
         'proj_desc' : string;
         'tech'      : Array<string>;
+        'categories'  : Array<string>;
     }
 
     const renderProjects = () => {
@@ -33,6 +34,7 @@ const Projects = () => {
                         img={project.img}
                         img_desc={project.img_desc}
                         tech={project.tech}
+                        categories={project.categories}
                         odd={ counter %2 === 0 ? true : false }
                         key={project.id}
                     >

@@ -179,8 +179,9 @@
 
     --occ1-delay: calc(var(--name-duration) + var(--delay-offset));
     --occ2-delay: calc( (var(--occ1-duration)*.75) + var(--occ1-delay) + var(--delay-offset) );
-    --occ3-delay: calc(var(--occ2-duration) + var(--occ2-delay) + var(--delay-offset));      
-    --preface-delay: calc(var(--occ3-delay) + var(--occ2-duration) + var(--delay-offset));
+    --occ3-delay: calc(var(--occ2-duration) + var(--occ2-delay) + var(--delay-offset));
+    --occ4-delay: calc(var(--occ2-duration) + var(--occ3-delay) + var(--delay-offset));      
+    --preface-delay: calc(var(--occ4-delay) + var(--occ2-duration) + var(--delay-offset));
 
     --wave-iterations: 10;
 
@@ -238,10 +239,13 @@
     #Occupation2 {
         animation: appear-from-below var(--occ2-duration) var(--occ2-delay) both;
     }
-    #Occupation3{
+    #Occupation3 {
         animation: appear-from-below var(--occ2-duration) var(--occ3-delay) both;
     }
-    #Introduction, #Graduation-Date, .socials{
+    #Occupation4 {
+        animation: appear-from-below var(--occ2-duration) var(--occ4-delay) both;
+    }
+    #Introduction, #Education, .socials{
         animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
     }
 }
@@ -302,10 +306,14 @@
         }
     }
 
-    .tech-stack {
+    .tech-stack, .categories {
         color: rgb(var(--text)) ;
         text-align: right;
         font-size: clamp(13px, 1vw , .9rem);
+    }
+
+    .categories li {
+        color: rgb(var(--))
     }
 
 }

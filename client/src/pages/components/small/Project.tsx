@@ -10,12 +10,13 @@ type Props = {
     img: string,
     img_desc: string,
     tech: Array<string>,
+    categories: Array<string>,
     odd: boolean,
     children?: React.ReactNode,
 
 }
 
-const Project = ({ title, main_link, img, img_desc, tech, odd, children }: Props) => {
+const Project = ({ title, main_link, img, img_desc, tech, categories, odd, children }: Props) => {
 
     return (
         <div className={`project-container ${odd ? 'odd' : 'even'}`}>
@@ -29,20 +30,32 @@ const Project = ({ title, main_link, img, img_desc, tech, odd, children }: Props
                     </p>
 
                     {
-                        // Project Description
+                        // project description set in parent.
                         children
                     }
+                    <div className='paragraph'>
+                        <p className='categories'> Category: </p>
+                        <ul > 
+                            {
+                                // list tech stack.
+                                categories.map( ( str) => { 
+                                    return <li key={str}> {str} </li>
+                                })
+                            }
+                        </ul>
+                    </div>
                     <div className='paragraph'>
                         <p className='tech-stack'> Tech Stack: </p>
                         <ul > 
                             {
-                                // create an li for all tech in the stack. Include their logos.
+                                // list tech stack.
                                 tech.map( ( str) => { 
                                     return <li key={str}> {str} </li>
                                 })
                             }
                         </ul>
                     </div>
+
                 </div>
 
             </div>

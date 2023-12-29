@@ -21,8 +21,8 @@ const About = () => {
                     </p>
                     <div className='paragraph'>
                         <p>
-                            Currently, I'm designing, developing, and testing safety-critical software at a world-renowned <HyperLink type={LinkType.External} 
-                                to='https://www.lockheedmartin.com/en-us/who-we-are.html'>Aerospace and Defense corporation.</HyperLink>
+                            Currently, I'm designing, developing, and testing safety-critical software for the latest and most advanced line of space-based missile warning systems at a 
+                            world-renowned <HyperLink type={LinkType.External} to='https://www.lockheedmartin.com/en-us/who-we-are.html'>Aerospace and Defense corporation.</HyperLink>
                         </p>
                     </div>
                     <div className='paragraph'>
@@ -37,7 +37,7 @@ const About = () => {
                             <p>Current Interests:</p>
                         </div>
                         <div className='paragraph'>
-                            <p className='indent italic'> general development, full-stack development, artificial intelligence, systems engineering</p>
+                            <p className='indent italic'> software-hardware development, embedded development, general development, artificial intelligence, systems engineering</p>
                         </div>
                         <Skills />
                     </div>
