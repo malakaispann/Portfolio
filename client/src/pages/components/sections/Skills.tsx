@@ -9,7 +9,7 @@ import { ReactComponent as JSLogo } from '../../../assets/logos/javascript-icon.
 import { ReactComponent as PythonLogo } from '../../../assets/logos/python-icon.svg';
 import { ReactComponent as RustLogo } from '../../../assets/logos/rust-icon.svg';
 import { ReactComponent as TSLogo } from '../../../assets/logos/typescript-icon.svg';
-import { ReactComponent as AssemblyLogo} from '../../../assets/logos/assembly.svg';
+import { ReactComponent as AssemblyLogo } from '../../../assets/logos/assembly.svg';
  
 import { ReactComponent as DockerLogo } from '../../../assets/logos/docker-icon.svg';
 import { ReactComponent as FlaskLogo } from '../../../assets/logos/flask-icon.svg';
