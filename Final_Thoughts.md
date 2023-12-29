@@ -1,6 +1,6 @@
 _This file only contains my personal thoughts on the project. See [Read Me](/README.md) for technical info._
 
-This project was one of the most challenging projects I've ever taken on. I'll remember the things I learned for the rest of my career.
+This project was one of the most challenging personal projects I've ever taken on. I'll remember the things I learned for the rest of my career.
 
 --- 
 
@@ -16,6 +16,6 @@ Fast-forward 2 months later, and I thought about the project; about the thrill o
 
 As I'm writing this, I look back and think about if I had continued to let the same thoughts hold me back. That version of me who is "better at web development" would have never been and this project would have never been finished. Out of all the things I learned over the course of this project, this is the most important.
 
-Moral of the story is, don't give up. If you're taking on something new, give yourself the time you need because learning isn't always pretty, simple, or fast. You are in charge or your own growth. Enjoy the process.
+Moral of the story is, don't give up. If you're taking on something new, give yourself the time you need because learning isn't always pretty, simple, or fast. You are in charge of your own growth. Enjoy the process.
 
 Thanks for checking this out!
