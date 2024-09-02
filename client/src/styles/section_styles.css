@@ -90,6 +90,7 @@
     line-height: 1.5rem;
     font-size: clamp(14px, 1.2vw ,1rem);
 }
+
 .text .paragraph * {
     text-indent: 0;
     font-size: clamp(14px, 1.2vw ,1rem);
@@ -100,6 +101,7 @@
     height: auto;
     letter-spacing: 1.2px;
     margin: 0 0 .5rem 0;
+
 }
 
 .text .indent {
@@ -245,7 +247,7 @@
     #Occupation4 {
         animation: appear-from-below var(--occ2-duration) var(--occ4-delay) both;
     }
-    #Introduction, #Education, .socials{
+    #Introduction, #History, .socials{
         animation: appear-from-below var(--occ2-duration) var(--preface-delay) both;
     }
 }

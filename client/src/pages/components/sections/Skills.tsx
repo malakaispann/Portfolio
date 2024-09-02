@@ -27,13 +27,13 @@ const Skills = () => {
                 <p> Some of the (pseudo-) programming languages I've worked with:</p>
                 <ul>
                     <li>
-                        <JavaLogo/>
-                    Java
+                        <CppLogo/>
+                    C++
                     </li>
 
                     <li>
-                        <CppLogo/>
-                    C++
+                        <JavaLogo/>
+                    Java
                     </li>
 
                     <li> 

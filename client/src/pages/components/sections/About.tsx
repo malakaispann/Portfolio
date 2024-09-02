@@ -21,8 +21,12 @@ const About = () => {
                     </p>
                     <div className='paragraph'>
                         <p>
-                            Currently, I'm designing, developing, and testing safety-critical software for the latest and most advanced line of space-based missile warning systems at a 
-                            world-renowned <HyperLink type={LinkType.External} to='https://www.lockheedmartin.com/en-us/who-we-are.html'>Aerospace and Defense corporation.</HyperLink>
+                            In my last role, I designed, developed, and tested safety-critical software for the <HyperLink type={LinkType.External} 
+                                to='https://news.lockheedmartin.com/2022-03-01-Lockheed-Martin-Selects-Mission-Payload-Providers-for-Missile-Warning-Satellite-System'>
+                                latest and most advanced line of space-based missile warning systems</HyperLink> at 
+                            a world-renowned Aerospace and Defense corporation.
+                            I'm currently doing some super secret spy stuff at one of the 3-letter agencies <span className='italic'>(psst, 
+                            the actual description of what I do is pending review; check back for updates)</span>.
                         </p>
                     </div>
                     <div className='paragraph'>
@@ -37,7 +41,7 @@ const About = () => {
                             <p>Current Interests:</p>
                         </div>
                         <div className='paragraph'>
-                            <p className='indent italic'> software-hardware development, embedded development, general development, artificial intelligence, systems engineering</p>
+                            <p className='indent italic'> software-hardware development, embedded development, developer operations (devops), artificial intelligence, systems engineering</p>
                         </div>
                         <Skills />
                     </div>
