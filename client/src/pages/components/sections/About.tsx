@@ -25,8 +25,9 @@ const About = () => {
                                 to='https://news.lockheedmartin.com/2022-03-01-Lockheed-Martin-Selects-Mission-Payload-Providers-for-Missile-Warning-Satellite-System'>
                                 latest and most advanced line of space-based missile warning systems</HyperLink> at 
                             a world-renowned Aerospace and Defense corporation.
-                            I'm currently doing some super secret spy stuff at one of the 3-letter agencies <span className='italic'>(psst, 
-                            the actual description of what I do is pending review; check back for updates)</span>.
+                            I'm currently at one of those 3-letter agencies designing, testing, and integrating an enterprise-level 
+                            data processing application. My work often includes creating/improving development environments, automating
+                            tasks, and CI/CD pipelines along with implementing various software modules that perform data processing capabilities.
                         </p>
                     </div>
                     <div className='paragraph'>

@@ -23,6 +23,17 @@
     },
     {
         "id"        : 2,
+        "title"     : "SemMed - Neo4j",
+        "main_link" : "https://github.com/KayDVC/semmed-neo4j",
+        "type"      : "featured",
+        "img"       : "/other/database.png",
+        "img_desc"  : "A stack of hard drives representing a database.",
+        "proj_desc" : "A conversion of raw data taken from the National Library of Medicine's Semantic Medline Database to a graphical/relational database using Neo4j.",
+        "tech"      : ["Python", "Numpy", "Pandas", "Dask", "AWS", "Neo4j"],
+        "categories": ["General Application", "Database", "Big Data", "Data Science"]
+    },
+    {
+        "id"        : 3,
         "title"     : "ASCII Bird",
         "main_link" : "https://github.com/KayDVC/AsciiBird",
         "type"      : "featured",
@@ -30,29 +41,29 @@
         "img_desc"  : "A 'game over' screen.",
         "proj_desc" : "A 'Flappy Bird'-like game written in 32-bit MASM Assembly using text-based graphics.",
         "tech"      : ["Assembly", "MASM"],
-        "categories": ["Game", "General Application"]
+        "categories": ["Game Development","Text-Based Graphics", "General Application"]
     },
     {
-        "id"        : 3,
+        "id"        : 4,
+        "title"     : "Portfolio Website",
+        "main_link" : "https://github.com/KayDVC/Portfolio",
+        "type"      : "featured",
+        "img"       : "/other/portfolio.png",
+        "img_desc"  : "A website with various components.",
+        "proj_desc" : "The code for this website. Created with passion, patience, and lots of coffee.",
+        "tech"      : ["React", "TypeScript", "HTML", "CSS", "Vercel"],
+        "categories": ["Web Development", "Front-End", "General Application"]
+    },
+    {
+        "id"        : 5,
         "title"     : "Activity Calendar",
         "main_link" : "https://github.com/KayDVC/Activity-Calendar",
-        "type"      : "featured",
+        "type"      : "extra",
         "img"       : "/other/calendar.png",
         "img_desc"  : "A calendar with multiple dates.",
         "proj_desc" : "A database-like application that features commanding for activity (data) insertion, lookup, and visualization using the Skip List data structure .",
         "tech"      : ["Java"],
         "categories": ["Algorithm", "General Application"]
-    },
-    {
-        "id"        : 4,
-        "title"     : "My Portfolio Website",
-        "main_link" : "https://github.com/KayDVC/Portfolio",
-        "type"      : "extra",
-        "img"       : "/other/portfolio.png",
-        "img_desc"  : "A calendar with multiple dates.",
-        "proj_desc" : "A database-like application that features commanding for data insertion, lookup, and visualization.",
-        "tech"      : ["React", "TypeScript", "HTML", "CSS", "Vercel"],
-        "categories": ["Web Development", "Front-End", "General Application"]
     }
 
 ]
