@@ -20,7 +20,7 @@ const Opening = () => {
                     <p className='subtitle' id='Occupation4'> Tech Enthusiast</p>
 
                     <p className='paragraph' id='Introduction'>
-                        I'm an early career software developer with a passion for Software-Hardware development and integration. In short, I like to make (and use) cool stuff. 
+                        I'm a full-performance software developer with a passion for Software-Hardware development and integration. In short, I like to make (and use) cool stuff. 
                     </p>
 
                     <div className='list' id='History'>
