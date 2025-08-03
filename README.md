@@ -1,8 +1,9 @@
 ## Table of Contents
+
 1. [Objective](#objective)
 2. [Use](#use)
-   - [Installation](#installation)
-   - [Building and Testing](#building-and-testing)
+    - [Installation](#installation)
+    - [Building and Testing](#building-and-testing)
 3. [Inspirations](#inspirations)
 4. [Future Plans](#future-plans)
 
@@ -18,38 +19,40 @@ This project is not intended to be used as a template or guide, but it can defin
 
 ### Installation
 
-Developed. built, and deployed using `Node v18.15.0`
+Developed. built, and deployed using `Node v18.15.0`; later switched to Bun.
+
 ```bash
-cd client 
-npm i
+cd client
+bun install
 ```
 
 ### Building and Testing
 
 Test the app using a server on your machine
+
 ```bash
 cd client
-npm run start
+bun start
 ```
 
 Generating a production build
+
 ```bash
 cd client
-npm run build
+bun build
 ```
 
 I used [Vercel](https://www.Vercel.com) to serve the app. If you want to view the production build on a local server you can use something like [serve](https://www.npmjs.com/package/serve).
-
 
 ## Inspirations
 
 While making the site, I looked to these great sites for design ideas:
 
-- [Maverick a.k.a SupaCode's Portfolio](https://www.supacode.dev)
-- [Olaolu Olawuyi's Portfolio](https://olaolu.dev/)
-- [V4 of Brittany Chiang's Portfolio](https://v4.brittanychiang.com/)
-- [Diogo Correia's Portfolio](https://diogotc.com/)
-- [Akshay's Portfolio](https://aksh-ai.com/)
+-   [Maverick a.k.a SupaCode's Portfolio](https://www.supacode.dev)
+-   [Olaolu Olawuyi's Portfolio](https://olaolu.dev/)
+-   [V4 of Brittany Chiang's Portfolio](https://v4.brittanychiang.com/)
+-   [Diogo Correia's Portfolio](https://diogotc.com/)
+-   [Akshay's Portfolio](https://aksh-ai.com/)
 
 Go checkout these talented devs!
 
@@ -57,13 +60,12 @@ Friendly reminder: don't be a weirdo who steals source code. Even when credited,
 
 ## Future Plans
 
-1. Currently, the site only showcases highlight projects. I plan on creating a section to include less prominent ones.
+1. Currently, the site only showcases highlight projects. I plan on developing a mechanism to showcase the less prominent projects.
 
-Any major changes other than the one(s) above won't be happening in this site. I might create a new version though.
+Any major changes other than the one(s) above won't be happening in this site. I'm too busy building other cool stuff. I might create a new version though.
 
 See my [personal thoughts and takeaways](./Final_Thoughts.md) from this project.
 
-Thanks, 
+Thanks,
 
 \- Kay
-

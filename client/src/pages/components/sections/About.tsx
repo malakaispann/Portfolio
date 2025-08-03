@@ -21,13 +21,19 @@ const About = () => {
                     </p>
                     <div className='paragraph'>
                         <p>
-                            In my last role, I designed, developed, and tested safety-critical software for the <HyperLink type={LinkType.External} 
-                                to='https://news.lockheedmartin.com/2022-03-01-Lockheed-Martin-Selects-Mission-Payload-Providers-for-Missile-Warning-Satellite-System'>
-                                latest and most advanced line of space-based missile warning systems</HyperLink> at 
-                            a world-renowned Aerospace and Defense corporation.
-                            I'm currently at one of those 3-letter agencies designing, testing, and integrating an enterprise-level 
-                            data processing application. My work often includes creating/improving development environments, automating
-                            tasks, and CI/CD pipelines along with implementing various software modules that perform data processing capabilities.
+                            Over the course of my short, action-packed career, I've had the opportunity to apply my creative thinking skills and meticulous approach to design, develop,
+                            test, and integrate some pretty cool things. Some examples include:
+                            <ul>
+                                <li>safety-critical software for the <HyperLink type={LinkType.External} 
+                                    to='https://news.lockheedmartin.com/2022-03-01-Lockheed-Martin-Selects-Mission-Payload-Providers-for-Missile-Warning-Satellite-System'>
+                                latest and most advanced line of space-based missile warning systems</HyperLink> at a world-renowned Aerospace and Defense corporation.</li>
+
+                                <li>enterprise-level, scalable data-processing software for who-know-what at <HyperLink type={LinkType.External} 
+                                    to='https://www.nsa.gov/'> at one of those 3-letter agencies.</HyperLink></li>
+
+                                <li>next-generation software platform for orchestrating Artificial Intelligence-powered workflows.</li>
+                            </ul>
+                            I've also played a prominent role in creating/improving development environments and automating manual workflows.
                         </p>
                     </div>
                     <div className='paragraph'>
