@@ -6,24 +6,20 @@ import Contact from './components/sections/Contact';
 
 const Main = () =>  {
 
-    var sections = [ 'opening', 'about' , 'projects', 'contact'];
-
+    const sections = [ 'opening', 'about' , 'projects', 'contact'];
 
     // update 'current'/active section hyperlink styling
     useEffect( () => {
 
         const highlightHyperlink = (entries: Array<IntersectionObserverEntry>) => {
-
             const removePrevActive = () => {
                 // get last active section and remove styling.
                 let prevActive = document.querySelector('.active');
                 prevActive?.classList.remove('active');
             }
             entries.forEach( (entry) => {
-                
                 // set section as active. Remove any other active sections.
                 if (entry.isIntersecting ){
-
                     if (entry.target.id === 'opening' ){
                         removePrevActive(); 
                     }
@@ -41,11 +37,11 @@ const Main = () =>  {
             });
         };
 
-        let styleIO = new IntersectionObserver(highlightHyperlink, { threshold : .5 });
+        let styleIO = new IntersectionObserver(highlightHyperlink, { threshold : .10 });
         sections.forEach ( section => {
-            styleIO.observe(document.getElementById(`${section}`) as Element);
+            styleIO.observe(document.getElementById(section) as Element);
         });
-        return ( () => { sections.forEach ( section => { styleIO.unobserve(document.getElementById(`${section}`) as Element) }) })
+        return ( () => { sections.forEach ( section => { styleIO.unobserve(document.getElementById(section) as Element) }) })
     });
 
     // dynamic-load animations

@@ -1,17 +1,28 @@
 [
     {
         "id"        : 0,
-        "title"     : "AirKeys",
-        "main_link" : "https://github.com/HelloWorldSeniorProject/AirKeys",
+        "title"     : "Hephaestus",
+        "main_link" : "https://github.com/KayDVC/hephaestus",
         "type"      : "featured",
-        "img"       : "/other/keyboard.png",
-        "img_desc"  : "A keyboard transmitting data.",
-        "proj_desc" : "A proof-of-concept, projection-based virtual keyboard utilizing Computer Vision to detect and transmit user input to multiple devices. Unfinished.",
-        "tech"      : ["Python", "OpenCV", "MediaPipe", "Bash", "PyTest", "Docker", "DevContainers", "Git Actions", "Sphinx"],
-        "categories": ["Image Processing", "Embedded Software", "DevOps"]
+        "img"       : "/other/anvil.png",
+        "img_desc"  : "A hammer hitting an anvil.",
+        "proj_desc" : "A general-purpose library for Python-based applications. Main features include first-party support for logging, file utilities, and pythonic implementations of some common data structures, paradigms, and debugging utilities.",
+        "tech"      : ["Python", "PyTest"],
+        "categories": ["Library", "Algorithm", "Data Structures"]
     },
     {
         "id"        : 1,
+        "title"     : "Zig HTML Parser",
+        "main_link" : "https://github.com/KayDVC/COSC352-final-project",
+        "type"      : "featured",
+        "img"       : "/other/parser.png",
+        "img_desc"  : "A machine that takes in multiple input flows and outputs one item.",
+        "proj_desc" : "A performant, performance-built HTML parser written in Zig.",
+        "tech"      : ["Zig", "HTML"],
+        "categories": ["Data Science", "General Application", "Algorithm"]
+    },
+    {
+        "id"        : 2,
         "title"     : "Traveling Salesman Problem w/ AI",
         "main_link" : "https://github.com/KayDVC/Traveling-Salesman-Problem-P2",
         "type"      : "featured",
@@ -22,7 +33,7 @@
         "categories": ["Artificial Intelligence", "Algorithm"]
     },
     {
-        "id"        : 2,
+        "id"        : 3,
         "title"     : "SemMed - Neo4j",
         "main_link" : "https://github.com/KayDVC/semmed-neo4j",
         "type"      : "featured",
@@ -33,7 +44,18 @@
         "categories": ["General Application", "Database", "Big Data", "Data Science"]
     },
     {
-        "id"        : 3,
+        "id"        : 4,
+        "title"     : "AirKeys",
+        "main_link" : "https://github.com/HelloWorldSeniorProject/AirKeys",
+        "type"      : "extra",
+        "img"       : "/other/keyboard.png",
+        "img_desc"  : "A keyboard transmitting data.",
+        "proj_desc" : "A proof-of-concept, projection-based virtual keyboard utilizing Computer Vision to detect and transmit user input to multiple devices. Unfinished.",
+        "tech"      : ["Python", "OpenCV", "MediaPipe", "Bash", "PyTest", "Docker", "DevContainers", "Git Actions", "Sphinx"],
+        "categories": ["Image Processing", "Embedded Software", "DevOps"]
+    },
+    {
+        "id"        : 5,
         "title"     : "ASCII Bird",
         "main_link" : "https://github.com/KayDVC/AsciiBird",
         "type"      : "featured",
@@ -44,7 +66,7 @@
         "categories": ["Game Development","Text-Based Graphics", "General Application"]
     },
     {
-        "id"        : 4,
+        "id"        : 6,
         "title"     : "Portfolio Website",
         "main_link" : "https://github.com/KayDVC/Portfolio",
         "type"      : "featured",
@@ -55,7 +77,7 @@
         "categories": ["Web Development", "Front-End", "General Application"]
     },
     {
-        "id"        : 5,
+        "id"        : 7,
         "title"     : "Activity Calendar",
         "main_link" : "https://github.com/KayDVC/Activity-Calendar",
         "type"      : "extra",

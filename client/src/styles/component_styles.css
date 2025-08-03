@@ -159,8 +159,8 @@
     max-height: 100%;
 }
 .graphic.large{
-    height: clamp(200px, 30vw, 250px);
-    width: clamp(200px, 30vw , 250px);
+    height: clamp(120px, 21vw, 165px);
+    width: clamp(120px, 21vw , 165px);
 }
 .graphic.medium {
     height: clamp(40px, 7vw, 55px);
