@@ -2,7 +2,7 @@
     {
         "id"        : 0,
         "title"     : "Hephaestus",
-        "main_link" : "https://github.com/KayDVC/hephaestus",
+        "main_link" : "https://github.com/malakaispann/hephaestus",
         "type"      : "featured",
         "img"       : "/other/anvil.png",
         "img_desc"  : "A hammer hitting an anvil.",
@@ -13,7 +13,7 @@
     {
         "id"        : 1,
         "title"     : "Zig HTML Parser",
-        "main_link" : "https://github.com/KayDVC/COSC352-final-project",
+        "main_link" : "https://github.com/malakaispann/COSC352-final-project",
         "type"      : "featured",
         "img"       : "/other/parser.png",
         "img_desc"  : "A machine that takes in multiple input flows and outputs one item.",
@@ -24,7 +24,7 @@
     {
         "id"        : 2,
         "title"     : "Traveling Salesman Problem w/ AI",
-        "main_link" : "https://github.com/KayDVC/Traveling-Salesman-Problem-P2",
+        "main_link" : "https://github.com/malakaispann/Traveling-Salesman-Problem-P2",
         "type"      : "featured",
         "img"       : "/other/destination.png",
         "img_desc"  : "A car traveling from one point to another.",
@@ -35,7 +35,7 @@
     {
         "id"        : 3,
         "title"     : "SemMed - Neo4j",
-        "main_link" : "https://github.com/KayDVC/semmed-neo4j",
+        "main_link" : "https://github.com/malakaispann/semmed-neo4j",
         "type"      : "featured",
         "img"       : "/other/database.png",
         "img_desc"  : "A stack of hard drives representing a database.",
@@ -57,7 +57,7 @@
     {
         "id"        : 5,
         "title"     : "ASCII Bird",
-        "main_link" : "https://github.com/KayDVC/AsciiBird",
+        "main_link" : "https://github.com/malakaispann/AsciiBird",
         "type"      : "featured",
         "img"       : "/other/game_over.png",
         "img_desc"  : "A 'game over' screen.",
@@ -68,7 +68,7 @@
     {
         "id"        : 6,
         "title"     : "Portfolio Website",
-        "main_link" : "https://github.com/KayDVC/Portfolio",
+        "main_link" : "https://github.com/malakaispann/Portfolio",
         "type"      : "featured",
         "img"       : "/other/portfolio.png",
         "img_desc"  : "A website with various components.",
@@ -79,7 +79,7 @@
     {
         "id"        : 7,
         "title"     : "Activity Calendar",
-        "main_link" : "https://github.com/KayDVC/Activity-Calendar",
+        "main_link" : "https://github.com/malakaispann/Activity-Calendar",
         "type"      : "extra",
         "img"       : "/other/calendar.png",
         "img_desc"  : "A calendar with multiple dates.",

@@ -19,7 +19,7 @@ This project is not intended to be used as a template or guide, but it can defin
 
 ### Installation
 
-Developed. built, and deployed using `Node v18.15.0`; later switched to Bun.
+Developed, built, and deployed using `Node v22`
 
 ```bash
 cd client
@@ -39,7 +39,7 @@ Generating a production build
 
 ```bash
 cd client
-bun build
+bun run build
 ```
 
 I used [Vercel](https://www.Vercel.com) to serve the app. If you want to view the production build on a local server you can use something like [serve](https://www.npmjs.com/package/serve).
