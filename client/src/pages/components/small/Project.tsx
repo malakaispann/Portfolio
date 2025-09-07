@@ -24,7 +24,7 @@ const Project = ({ title, main_link, img, img_desc, tech, categories, odd, child
                 <Graphic size={Size.Large} graphic_src={img} desc={img_desc} disable_inversion={true} />
                 <div className='desc'>
                     <p className='subtitle'>
-                        <HyperLink type={LinkType.External} to={main_link ?? 'https://github.com/KayDVC?tab=repositories'}>
+                        <HyperLink type={LinkType.External} to={main_link ?? 'https://github.com/malakaispann?tab=repositories'}>
                             {title}
                         </HyperLink>
                     </p>
